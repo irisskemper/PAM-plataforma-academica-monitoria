@@ -59,8 +59,8 @@ function avaliarItem(id, acao) {
 
   document.getElementById("modalSub").textContent =
     acao === "aprovado"
-      ? "O aluno será aprovado e o item será removido da lista."
-      : "O item será removido da lista.";
+      ? "O material será aprovado e o item será removido da lista."
+      : "O material será removido da lista.";
 
   var btnConfirmar = document.getElementById("modalBtnConfirmar");
   btnConfirmar.textContent =
@@ -92,7 +92,9 @@ function confirmarModal() {
   }
 
   card.remove();
-  mostrarToast(acao === "aprovado" ? "Aluno aprovado." : "Aluno recusado.");
+  mostrarToast(
+    acao === "aprovado" ? "Material aprovado." : "Material recusado.",
+  );
   _modalId = null;
   _modalAcao = null;
 }
