@@ -81,11 +81,6 @@ document.getElementById("btnCancelarExcluir").addEventListener("click", () => {
   document.getElementById("modalExcluir").classList.remove("aberto");
 });
 
-document.getElementById("btnConfirmarExcluir").addEventListener("click", () => {
-  document.getElementById("modalExcluir").classList.remove("aberto");
-  mostrarToast("⚠ Funcionalidade de exclusão ainda não disponível.", 4000);
-});
-
 document.getElementById("modalExcluir").addEventListener("click", function (e) {
   if (e.target === this) this.classList.remove("aberto");
 });
@@ -127,7 +122,10 @@ document.getElementById("modalExcluir").addEventListener("click", function (e) {
   });
 
   // clicar no fundo escuro fecha
-  if (fundo) fundo.addEventListener("click", function () { fechar(false); });
+  if (fundo)
+    fundo.addEventListener("click", function () {
+      fechar(false);
+    });
 
   // clicar em qualquer lugar fora da navbar fecha
   document.addEventListener("click", function (e) {
@@ -148,12 +146,16 @@ document.getElementById("modalExcluir").addEventListener("click", function (e) {
 
   // abrir o menu do avatar fecha o menu hambúrguer
   var avatar = document.getElementById("btnAvatar");
-  if (avatar) avatar.addEventListener("click", function () { fechar(false); });
+  if (avatar)
+    avatar.addEventListener("click", function () {
+      fechar(false);
+    });
 
   // girou o celular ou aumentou a janela: volta ao menu normal
   function aoMudarTamanho(e) {
     if (!e.matches) fechar(false);
   }
-  if (telaPequena.addEventListener) telaPequena.addEventListener("change", aoMudarTamanho);
+  if (telaPequena.addEventListener)
+    telaPequena.addEventListener("change", aoMudarTamanho);
   else telaPequena.addListener(aoMudarTamanho);
 })();
