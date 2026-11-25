@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#687447" />
+    <title>PAM – Código de segurança</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- painel esquerdo (o mesmo splash do login, já deslizado) -->
+    <div id="splash-panel">
+      <a
+        href="../esqueceu-senha/index.html"
+        class="voltar-btn"
+        aria-label="Voltar"
+      >
+        <img src="image/voltar-icon.png" alt="" />
+      </a>
+      <div class="splash-content">
+        <img src="image/logo-pam.png" alt="PAM logo" class="logo-icone" />
+      </div>
+    </div>
+
+    <!-- lado direito, onde fica o card -->
+    <div id="codigo" class="half-codigo">
+      <div class="codigo-card">
+        <p class="codigo-title">Código de segurança</p>
+        <p class="codigo-desc">
+          Enviamos um código de 4 dígitos para:<br />
+          <span id="email-destino">seu email institucional</span>
+        </p>
+
+        <div class="input-group">
+          <div class="digitos-wrap" id="digitos-wrap">
+            <input
+              type="text"
+              inputmode="numeric"
+              maxlength="1"
+              class="digito"
+              aria-label="Dígito 1"
+            />
+            <input
+              type="text"
+              inputmode="numeric"
+              maxlength="1"
+              class="digito"
+              aria-label="Dígito 2"
+            />
+            <input
+              type="text"
+              inputmode="numeric"
+              maxlength="1"
+              class="digito"
+              aria-label="Dígito 3"
+            />
+            <input
+              type="text"
+              inputmode="numeric"
+              maxlength="1"
+              class="digito"
+              aria-label="Dígito 4"
+            />
+          </div>
+          <span class="erro" id="erro-codigo">Digite os 4 dígitos do código.</span>
+        </div>
+
+        <button class="btn-avancar" type="button" onclick="confirmarCodigo()">
+          Avançar
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

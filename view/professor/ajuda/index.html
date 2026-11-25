@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#687447" />
+    <title>PAM – Central de ajuda</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- navbar -->
+    <nav class="navbar" aria-label="Navegação principal">
+      <a href="../home-professor/index.html" class="navbar__brand">
+        <img src="images/logo-pam1.png" alt="PAM" class="navbar__logo" />
+      </a>
+
+      <ul class="navbar__links" id="navLinks">
+        <li>
+          <a href="../home-professor/index.html" class="navbar__link">
+            <img src="images/home-icon.png" alt="" class="navbar__icon" />
+            Início
+          </a>
+        </li>
+        <li>
+          <a href="../validacao-professor/index.html" class="navbar__link">
+            <img src="images/book-icon.png" alt="" class="navbar__icon" />
+            Validação
+          </a>
+        </li>
+        <li>
+          <a href="../perfil-professor/index.html" class="navbar__link">
+            <img src="images/user-icon.png" alt="" class="navbar__icon" />
+            Perfil
+          </a>
+        </li>
+        <li>
+          <a href="index.html" class="navbar__link active">
+            <img src="images/support-icon.png" alt="" class="navbar__icon" />
+            Central de ajuda
+          </a>
+        </li>
+      </ul>
+
+      <!-- botão do menu (aparece só em telas pequenas) -->
+      <button
+        class="navbar__toggle"
+        id="btnMenuMobile"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <span class="navbar__toggle-barra"></span>
+        <span class="navbar__toggle-barra"></span>
+        <span class="navbar__toggle-barra"></span>
+      </button>
+
+      <!-- avatar com o menu de sair -->
+      <div class="navbar__perfil">
+        <button
+          class="navbar__avatar"
+          id="btnAvatar"
+          aria-label="Menu do perfil"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="menuAvatar"
+        >
+          <img src="images/perfil-icon.png" alt="Professor" />
+        </button>
+        <div class="avatar-menu" id="menuAvatar">
+          <a
+            class="avatar-menu__item avatar-menu__item--sair"
+            href="../../inicio/login/index.html"
+            id="btnSair"
+            >Sair</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- fundo escurecido atrás do menu mobile -->
+    <div class="navbar__overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <main class="main">
+      <section class="painel">
+        <h2 class="painel__titulo">
+          <img src="images/support-icon.png" alt="" class="painel__titulo-icon" />
+          Central de ajuda
+        </h2>
+
+        <!-- as 4 caixinhas ficam aqui -->
+        <div class="faq-lista">
+
+          <!-- caixinha 1: troque a pergunta e a resposta -->
+          <article class="faq-card">
+            <p class="faq-card__pergunta">Pergunta 1</p>
+            <p class="faq-card__resposta">
+              Escreva aqui a resposta da pergunta 1.
+            </p>
+          </article>
+
+          <!-- caixinha 2: troque a pergunta e a resposta -->
+          <article class="faq-card">
+            <p class="faq-card__pergunta">Pergunta 2</p>
+            <p class="faq-card__resposta">
+              Escreva aqui a resposta da pergunta 2.
+            </p>
+          </article>
+
+          <!-- caixinha 3: troque a pergunta e a resposta -->
+          <article class="faq-card">
+            <p class="faq-card__pergunta">Pergunta 3</p>
+            <p class="faq-card__resposta">
+              Escreva aqui a resposta da pergunta 3.
+            </p>
+          </article>
+
+          <!-- caixinha 4: troque a pergunta e a resposta -->
+          <article class="faq-card">
+            <p class="faq-card__pergunta">Pergunta 4</p>
+            <p class="faq-card__resposta">
+              Escreva aqui a resposta da pergunta 4.
+            </p>
+          </article>
+        </div>
+
+        <!-- botão que abre a janela para escrever a dúvida -->
+        <div class="painel__rodape">
+          <button class="btn-duvida" id="btnDuvida" type="button">
+            Continua com dúvida? Clique aqui
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- janela para escrever a dúvida -->
+    <div class="modal-overlay" id="modalDuvida">
+      <div
+        class="modal modal--form"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Enviar dúvida ao suporte"
+      >
+        <!-- etapa 1: escrever a dúvida -->
+        <div class="modal__etapa" id="etapaEscrever">
+          <p class="modal__texto">Envie sua dúvida</p>
+
+          <label class="modal__label" for="textoDuvida">
+            Descreva sua dúvida
+          </label>
+          <textarea
+            class="modal__textarea"
+            id="textoDuvida"
+            maxlength="500"
+            placeholder="Escreva aqui o que você precisa saber"
+          ></textarea>
+          <span class="modal__erro" id="erroDuvida">
+            Escreva sua dúvida antes de enviar.
+          </span>
+
+          <p class="modal__destino">
+            Ela será enviada para <span class="email-suporte"></span>.
+          </p>
+
+          <div class="modal__acoes">
+            <button
+              class="modal__btn modal__btn--cancelar"
+              id="btnCancelar"
+              type="button"
+            >
+              Cancelar
+            </button>
+            <button
+              class="modal__btn modal__btn--confirmar"
+              id="btnEnviar"
+              type="button"
+            >
+              Enviar
+            </button>
+          </div>
+        </div>
+
+        <!-- etapa 2: confirmação de envio -->
+        <div class="modal__etapa oculto" id="etapaConfirmacao">
+          <p class="modal__texto">Dúvida enviada</p>
+          <p class="modal__mensagem">
+            Sua dúvida foi enviada para <span class="email-suporte"></span>.
+          </p>
+          <div class="modal__acoes">
+            <button
+              class="modal__btn modal__btn--confirmar"
+              id="btnFechar"
+              type="button"
+            >
+              Fechar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

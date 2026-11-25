@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#687447" />
+    <title>PAM – Home Aluno</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ── NAVBAR ─────────────────────────────────────────────── -->
+    <nav class="navbar" aria-label="Navegação principal">
+      <a href="../home-aluno/index.html" class="navbar__brand">
+        <img src="images/logo-pam1.png" alt="PAM" class="navbar__logo" />
+      </a>
+
+      <ul class="navbar__links" id="navLinks">
+        <li>
+          <a href="../home-aluno/index.html" class="navbar__link active">
+            <img src="images/home-icon.png" alt="" class="navbar__icon" />
+            Início
+          </a>
+        </li>
+
+        <li>
+          <a href="../monitores-aluno/index.html" class="navbar__link">
+            <img src="images/users-icon.png" alt="" class="navbar__icon" />
+            Monitores
+          </a>
+        </li>
+        <li>
+          <a href="../tira-duvidas/index.html" class="navbar__link">
+            <img src="images/duvida-icon.png" alt="" class="navbar__icon" />
+            Tira-dúvidas
+          </a>
+        </li>
+        <li>
+          <a href="../perfil-aluno/index.html" class="navbar__link">
+            <img src="images/user-icon.png" alt="" class="navbar__icon" />
+            Perfil
+          </a>
+        </li>
+        <li>
+          <a href="../ajuda/index.html" class="navbar__link">
+            <img src="images/support-icon.png" alt="" class="navbar__icon" />
+            Central de ajuda
+          </a>
+        </li>
+      </ul>
+
+      <!-- botão do menu (aparece só em telas pequenas) -->
+      <button
+        class="navbar__toggle"
+        id="btnMenuMobile"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <span class="navbar__toggle-barra"></span>
+        <span class="navbar__toggle-barra"></span>
+        <span class="navbar__toggle-barra"></span>
+      </button>
+
+      <button
+        class="navbar__avatar"
+        id="btnAvatar"
+        aria-label="Perfil"
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-controls="menuAvatar"
+      >
+        <img src="images/perfil-icon.png" alt="Aluno" />
+      </button>
+    </nav>
+
+    <!-- fundo escurecido atrás do menu mobile -->
+    <div class="navbar__overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <!-- Menu dropdown do avatar -->
+    <div class="avatar-menu" id="menuAvatar">
+      <a
+        href="../../inicio/login/index.html"
+        class="avatar-menu__item avatar-menu__item--sair"
+        >Sair</a
+      >
+    </div>
+
+    <!-- ── CONTEÚDO PRINCIPAL ─────────────────────────────────── -->
+    <main class="main">
+      <!-- ══ COLUNA ESQUERDA: MATERIAIS ════════════════════════ -->
+      <section class="painel painel--materiais">
+        <h2 class="painel__titulo">
+          <img src="images/book-icon.png" alt="" class="painel__titulo-icon" />
+          Materiais
+        </h2>
+        <div class="materiais-search">
+          <input
+            type="text"
+            id="campoBusca"
+            class="materiais-search__input"
+            placeholder="Buscar disciplina..."
+          />
+        </div>
+        <div class="materiais-grid">
+          <!-- Card disciplina 1 -->
+          <article class="material-card" tabindex="0">
+            <div class="material-card__topo">
+              <div class="material-card__icone-wrap">
+                <!-- IMAGEM: ícone da disciplina (ex: código, matemática) -->
+                <img
+                  src="images/code-icon.png"
+                  alt=""
+                  class="material-card__icone"
+                />
+              </div>
+              <div class="material-card__info-topo">
+                <p class="material-card__disciplina">Cálculo II</p>
+                <p class="material-card__professor">Prof. Jonas Cruz</p>
+              </div>
+              <button
+                class="material-card__ajuda"
+                aria-label="Tira-dúvidas"
+                onclick="irParaDuvidas()"
+              >
+                <img
+                  src="images/duvida-icon.png"
+                  alt="?"
+                  class="material-card__ajuda-icone"
+                />
+              </button>
+            </div>
+
+            <p class="material-card__secao">Materiais</p>
+
+            <div class="material-card__arquivos">
+              <div
+                class="arquivo-item"
+                onclick="abrirMaterial('apostila-cap1.pdf')"
+              >
+                <img
+                  src="images/page-icon.png"
+                  alt=""
+                  class="arquivo-item__icone"
+                />
+                <div>
+                  <p class="arquivo-item__nome">Apostila – Cap. I</p>
+                  <p class="arquivo-item__tipo">PDF</p>
+                </div>
+              </div>
+              <div
+                class="arquivo-item"
+                onclick="abrirMaterial('apostila-cap2.pdf')"
+              >
+                <img
+                  src="images/page-icon.png"
+                  alt=""
+                  class="arquivo-item__icone"
+                />
+                <div>
+                  <p class="arquivo-item__nome">Apostila – Cap. I</p>
+                  <p class="arquivo-item__tipo">PDF</p>
+                </div>
+              </div>
+              <div
+                class="arquivo-item"
+                onclick="abrirMaterial('apostila-cap3.pdf')"
+              >
+                <img
+                  src="images/page-icon.png"
+                  alt=""
+                  class="arquivo-item__icone"
+                />
+                <div>
+                  <p class="arquivo-item__nome">Apostila – Cap. I</p>
+                  <p class="arquivo-item__tipo">PDF</p>
+                </div>
+              </div>
+            </div>
+          </article>
+          <!-- Card disciplina 2 -->
+          <article class="material-card" tabindex="0">
+            <div class="material-card__topo">
+              <div class="material-card__icone-wrap">
+                <!-- IMAGEM: ícone da disciplina (ex: código, matemática) -->
+                <img
+                  src="images/code-icon.png"
+                  alt=""
+                  class="material-card__icone"
+                />
+              </div>
+              <div class="material-card__info-topo">
+                <p class="material-card__disciplina">Algoritmo</p>
+                <p class="material-card__professor">Prof. Jonas Cruz</p>
+              </div>
+              <button
+                class="material-card__ajuda"
+                aria-label="Tira-dúvidas"
+                onclick="irParaDuvidas()"
+              >
+                <img
+                  src="images/duvida-icon.png"
+                  alt="?"
+                  class="material-card__ajuda-icone"
+                />
+              </button>
+            </div>
+
+            <p class="material-card__secao">Materiais</p>
+
+            <div class="material-card__arquivos">
+              <div
+                class="arquivo-item"
+                onclick="abrirMaterial('apostila-cap1.pdf')"
+              >
+                <img
+                  src="images/page-icon.png"
+                  alt=""
+                  class="arquivo-item__icone"
+                />
+                <div>
+                  <p class="arquivo-item__nome">Apostila – Cap. I</p>
+                  <p class="arquivo-item__tipo">PDF</p>
+                </div>
+              </div>
+              <div
+                class="arquivo-item"
+                onclick="abrirMaterial('apostila-cap2.pdf')"
+              >
+                <img
+                  src="images/page-icon.png"
+                  alt=""
+                  class="arquivo-item__icone"
+                />
+                <div>
+                  <p class="arquivo-item__nome">Apostila – Cap. I</p>
+                  <p class="arquivo-item__tipo">PDF</p>
+                </div>
+              </div>
+              <div
+                class="arquivo-item"
+                onclick="abrirMaterial('apostila-cap3.pdf')"
+              >
+                <img
+                  src="images/page-icon.png"
+                  alt=""
+                  class="arquivo-item__icone"
+                />
+                <div>
+                  <p class="arquivo-item__nome">Apostila – Cap. I</p>
+                  <p class="arquivo-item__tipo">PDF</p>
+                </div>
+              </div>
+            </div>
+          </article>
+          <!-- Card disciplina 3 -->
+          <article class="material-card" tabindex="0">
+            <div class="material-card__topo">
+              <div class="material-card__icone-wrap">
+                <!-- IMAGEM: ícone da disciplina (ex: código, matemática) -->
+                <img
+                  src="images/code-icon.png"
+                  alt=""
+                  class="material-card__icone"
+                />
+              </div>
+              <div class="material-card__info-topo">
+                <p class="material-card__disciplina">Cálculo II</p>
+                <p class="material-card__professor">Prof. Jonas Cruz</p>
+              </div>
+              <button
+                class="material-card__ajuda"
+                aria-label="Tira-dúvidas"
+                onclick="irParaDuvidas()"
+              >
+                <img
+                  src="images/duvida-icon.png"
+                  alt="?"
+                  class="material-card__ajuda-icone"
+                />
+              </button>
+            </div>
+
+            <p class="material-card__secao">Materiais</p>
+
+            <div class="material-card__arquivos">
+              <div
+                class="arquivo-item"
+                onclick="abrirMaterial('apostila-cap1.pdf')"
+              >
+                <img
+                  src="images/page-icon.png"
+                  alt=""
+                  class="arquivo-item__icone"
+                />
+                <div>
+                  <p class="arquivo-item__nome">Apostila – Cap. I</p>
+                  <p class="arquivo-item__tipo">PDF</p>
+                </div>
+              </div>
+              <div
+                class="arquivo-item"
+                onclick="abrirMaterial('apostila-cap2.pdf')"
+              >
+                <img
+                  src="images/page-icon.png"
+                  alt=""
+                  class="arquivo-item__icone"
+                />
+                <div>
+                  <p class="arquivo-item__nome">Apostila – Cap. I</p>
+                  <p class="arquivo-item__tipo">PDF</p>
+                </div>
+              </div>
+              <div
+                class="arquivo-item"
+                onclick="abrirMaterial('apostila-cap3.pdf')"
+              >
+                <img
+                  src="images/page-icon.png"
+                  alt=""
+                  class="arquivo-item__icone"
+                />
+                <div>
+                  <p class="arquivo-item__nome">Apostila – Cap. I</p>
+                  <p class="arquivo-item__tipo">PDF</p>
+                </div>
+              </div>
+            </div>
+          </article>
+          <!-- Card disciplina 4 -->
+          <article class="material-card" tabindex="0">
+            <div class="material-card__topo">
+              <div class="material-card__icone-wrap">
+                <!-- IMAGEM: ícone da disciplina (ex: código, matemática) -->
+                <img
+                  src="images/code-icon.png"
+                  alt=""
+                  class="material-card__icone"
+                />
+              </div>
+              <div class="material-card__info-topo">
+                <p class="material-card__disciplina">Cálculo II</p>
+                <p class="material-card__professor">Prof. Jonas Cruz</p>
+              </div>
+              <button
+                class="material-card__ajuda"
+                aria-label="Tira-dúvidas"
+                onclick="irParaDuvidas()"
+              >
+                <img
+                  src="images/duvida-icon.png"
+                  alt="?"
+                  class="material-card__ajuda-icone"
+                />
+              </button>
+            </div>
+
+            <p class="material-card__secao">Materiais</p>
+
+            <div class="material-card__arquivos">
+              <div
+                class="arquivo-item"
+                onclick="abrirMaterial('apostila-cap1.pdf')"
+              >
+                <img
+                  src="images/page-icon.png"
+                  alt=""
+                  class="arquivo-item__icone"
+                />
+                <div>
+                  <p class="arquivo-item__nome">Apostila – Cap. I</p>
+                  <p class="arquivo-item__tipo">PDF</p>
+                </div>
+              </div>
+              <div
+                class="arquivo-item"
+                onclick="abrirMaterial('apostila-cap2.pdf')"
+              >
+                <img
+                  src="images/page-icon.png"
+                  alt=""
+                  class="arquivo-item__icone"
+                />
+                <div>
+                  <p class="arquivo-item__nome">Apostila – Cap. I</p>
+                  <p class="arquivo-item__tipo">PDF</p>
+                </div>
+              </div>
+              <div
+                class="arquivo-item"
+                onclick="abrirMaterial('apostila-cap3.pdf')"
+              >
+                <img
+                  src="images/page-icon.png"
+                  alt=""
+                  class="arquivo-item__icone"
+                />
+                <div>
+                  <p class="arquivo-item__nome">Apostila – Cap. I</p>
+                  <p class="arquivo-item__tipo">PDF</p>
+                </div>
+              </div>
+            </div>
+          </article>
+          <!-- Card disciplina 5 -->
+          <article class="material-card" tabindex="0">
+            <div class="material-card__topo">
+              <div class="material-card__icone-wrap">
+                <!-- IMAGEM: ícone da disciplina (ex: código, matemática) -->
+                <img
+                  src="images/code-icon.png"
+                  alt=""
+                  class="material-card__icone"
+                />
+              </div>
+              <div class="material-card__info-topo">
+                <p class="material-card__disciplina">Cálculo II</p>
+                <p class="material-card__professor">Prof. Jonas Cruz</p>
+              </div>
+              <button
+                class="material-card__ajuda"
+                aria-label="Tira-dúvidas"
+                onclick="irParaDuvidas()"
+              >
+                <img
+                  src="images/duvida-icon.png"
+                  alt="?"
+                  class="material-card__ajuda-icone"
+                />
+              </button>
+            </div>
+
+            <p class="material-card__secao">Materiais</p>
+
+            <div class="material-card__arquivos">
+              <div
+                class="arquivo-item"
+                onclick="abrirMaterial('apostila-cap1.pdf')"
+              >
+                <img
+                  src="images/page-icon.png"
+                  alt=""
+                  class="arquivo-item__icone"
+                />
+                <div>
+                  <p class="arquivo-item__nome">Apostila – Cap. I</p>
+                  <p class="arquivo-item__tipo">PDF</p>
+                </div>
+              </div>
+              <div
+                class="arquivo-item"
+                onclick="abrirMaterial('apostila-cap2.pdf')"
+              >
+                <img
+                  src="images/page-icon.png"
+                  alt=""
+                  class="arquivo-item__icone"
+                />
+                <div>
+                  <p class="arquivo-item__nome">Apostila – Cap. I</p>
+                  <p class="arquivo-item__tipo">PDF</p>
+                </div>
+              </div>
+              <div
+                class="arquivo-item"
+                onclick="abrirMaterial('apostila-cap3.pdf')"
+              >
+                <img
+                  src="images/page-icon.png"
+                  alt=""
+                  class="arquivo-item__icone"
+                />
+                <div>
+                  <p class="arquivo-item__nome">Apostila – Cap. I</p>
+                  <p class="arquivo-item__tipo">PDF</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ══ COLUNA DIREITA: AVISOS ════════════════════════════ -->
+      <!-- ══ COLUNA DIREITA ════════════════════════════════════ -->
+      <div class="coluna-direita">
+        <!-- Avisos -->
+        <section class="painel painel--avisos">
+          <h2 class="painel__titulo">
+            <img
+              src="images/notification-icon.png"
+              alt=""
+              class="painel__titulo-icon"
+            />
+            Avisos
+          </h2>
+          <div class="avisos-lista">
+            <article class="aviso-card">
+              <p class="aviso-card__texto">
+                Monitoria do dia 14/05 foi cancelada!
+              </p>
+              <div class="aviso-card__rodape">
+                <span class="aviso-card__disciplina">LPOOED</span>
+                <span class="aviso-card__data">Enviado em 10/07/2026</span>
+              </div>
+            </article>
+            <article class="aviso-card">
+              <p class="aviso-card__texto">
+                Lista de matemática disponível na plataforma.
+              </p>
+              <div class="aviso-card__rodape">
+                <span class="aviso-card__disciplina">Matemática</span>
+                <span class="aviso-card__data">Enviado em 10/07/2026</span>
+              </div>
+            </article>
+            <article class="aviso-card">
+              <p class="aviso-card__texto">
+                Exercícios de algoritmo será disponibilizada amanhã.
+              </p>
+              <div class="aviso-card__rodape">
+                <span class="aviso-card__disciplina">Algoritmos</span>
+                <span class="aviso-card__data">Enviado em 10/07/2026</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Monitores -->
+      </div>
+      <!-- fim .coluna-direita -->
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#687447" />
+    <title>PAM – Cadastro</title>
+    <link rel="stylesheet" href="../cadastro/style.css" />
+  </head>
+
+  <body>
+    <!-- cadastro -->
+    <div id="cadastro">
+      <div id="splash-panel">
+        <div class="splash-content">
+          <img src="image/logo-pam.png" alt="PAM logo" />
+        </div>
+      </div>
+      <div class="half-cadastro">
+        <div class="cadastro-card">
+          <p class="cadastro-title">Faça seu cadastro!</p>
+          <div class="card-scroll-body">
+            <div class="input-wrap">
+              <!-- nome completo -->
+              <div class="input-group">
+                <div class="input-field" id="field-nome">
+                  <img src="image/icon-usuario.png" alt="" class="field-icon" />
+                  <div class="input-inner">
+                    <label for="nome">Nome completo:</label>
+                    <input
+                      type="text"
+                      id="nome"
+                      placeholder="Iris de Souza Kemper"
+                    />
+                  </div>
+                </div>
+                <span class="erro" id="erro-nome"
+                  >Informe seu nome completo.</span
+                >
+              </div>
+
+              <!-- matrícula -->
+              <div class="input-group">
+                <div class="input-field" id="field-matricula">
+                  <img src="image/icon-usuario.png" alt="" class="field-icon" />
+                  <div class="input-inner">
+                    <label for="matricula">Matrícula:</label>
+                    <input
+                      type="text"
+                      id="matricula"
+                      placeholder="20231D12GR0000"
+                    />
+                  </div>
+                </div>
+                <span class="erro" id="erro-matricula"
+                  >Informe sua matrícula.</span
+                >
+              </div>
+
+              <!-- email institucional -->
+              <div class="input-group">
+                <div class="input-field" id="field-email">
+                  <img src="image/icon-email.png" alt="" class="field-icon" />
+                  <div class="input-inner">
+                    <label for="email">Email institucional:</label>
+                    <input
+                      type="email"
+                      id="email"
+                      placeholder="isk@discente.ifpe.edu.br"
+                    />
+                  </div>
+                </div>
+                <span class="erro" id="erro-email"
+                  >Use seu email institucional.</span
+                >
+              </div>
+
+              <!-- senha -->
+              <div class="input-group">
+                <div class="input-field" id="field-senha">
+                  <img src="image/icon-lock.png" alt="" class="field-icon" />
+                  <div class="input-inner">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" placeholder="••••••••" />
+                  </div>
+                  <button
+                    class="eye-btn"
+                    type="button"
+                    onclick="toggleSenha('senha', 'eye-icon-senha')"
+                    aria-label="Mostrar senha"
+                  >
+                    <img
+                      src="image/icon-eye-open.png"
+                      alt=""
+                      id="eye-icon-senha"
+                    />
+                  </button>
+                </div>
+                <span class="erro" id="erro-senha"
+                  >A senha deve ter pelo menos 6 caracteres.</span
+                >
+              </div>
+
+              <!-- confirmar senha -->
+              <div class="input-group">
+                <div class="input-field" id="field-confirma">
+                  <img src="image/icon-lock.png" alt="" class="field-icon" />
+                  <div class="input-inner">
+                    <label for="confirma">Confirme sua senha:</label>
+                    <input
+                      type="password"
+                      id="confirma"
+                      placeholder="••••••••"
+                    />
+                  </div>
+                  <button
+                    class="eye-btn"
+                    type="button"
+                    onclick="toggleSenha('confirma', 'eye-icon-confirma')"
+                    aria-label="Mostrar senha"
+                  >
+                    <img
+                      src="image/icon-eye-open.png"
+                      alt=""
+                      id="eye-icon-confirma"
+                    />
+                  </button>
+                </div>
+                <span class="erro" id="erro-confirma"
+                  >As senhas não coincidem.</span
+                >
+              </div>
+            </div>
+
+            <!-- tipo de perfil -->
+            <div class="perfil-wrap">
+              <p class="perfil-label">Você é:</p>
+              <div class="perfil-btns">
+                <button
+                  class="btn-perfil"
+                  id="btn-professor"
+                  onclick="selecionarPerfil('professor')"
+                >
+                  Professor
+                </button>
+                <button
+                  class="btn-perfil"
+                  id="btn-monitor"
+                  onclick="selecionarPerfil('monitor')"
+                >
+                  Monitor
+                </button>
+                <button
+                  class="btn-perfil"
+                  id="btn-aluno"
+                  onclick="selecionarPerfil('aluno')"
+                >
+                  Aluno
+                </button>
+              </div>
+              <span class="erro" id="erro-perfil">Selecione seu perfil.</span>
+
+              <!-- aparece após selecionar o perfil -->
+              <div id="extra-perfil" style="display: none">
+                <div id="opcoes-extra" class="opcoes-check"></div>
+                <span class="erro" id="erro-extra"
+                  >Selecione pelo menos uma opção.</span
+                >
+              </div>
+            </div>
+
+            <!-- botão avançar -->
+            <button class="btn-cadastro" onclick="fazerCadastro()">
+              Avançar
+            </button>
+
+            <!-- já tem conta -->
+            <p class="login-line">
+              Já possui uma conta?
+              <a href="../../inicio/login/index.html">Faça login!</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="../cadastro/script.js"></script>
+  </body>
+</html>

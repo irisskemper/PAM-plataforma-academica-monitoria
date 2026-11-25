@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#687447" />
+    <title>PAM – Plataforma Acadêmica de Monitoria</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- login -->
+    <div id="login">
+      <div class="half-login">
+        <!-- card do login -->
+        <div class="login-card">
+          <p class="login-title">Bem-vindo(a)!</p>
+          <!-- preencher dados -->
+          <div class="input-wrap">
+            <!-- dados do email -->
+            <div class="input-group">
+              <div class="input-field" id="field-email">
+                <img src="image/icon-usuario.png" class="field-icon" alt="" />
+                <div class="input-inner">
+                  <label for="email">Email:</label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="abc@discente.ifpe.edu.br"
+                  />
+                </div>
+              </div>
+              <span class="erro" id="erro-email"
+                >Use seu email institucional.</span
+              >
+            </div>
+            <!-- dados da senha -->
+            <div class="input-group">
+              <div class="input-field" id="field-senha">
+                <img src="image/icon-lock.png" class="field-icon" alt="" />
+                <div class="input-inner">
+                  <label for="senha">Senha:</label>
+                  <input type="password" id="senha" placeholder="Senha" />
+                </div>
+                <button
+                  class="eye-btn"
+                  type="button"
+                  onclick="toggleSenha()"
+                  aria-label="Mostrar ou ocultar senha"
+                >
+                  <img src="image/icon-eye-open.png" alt="" id="eye-icon" />
+                </button>
+              </div>
+              <span class="erro" id="erro-senha">Digite sua senha.</span>
+            </div>
+          </div>
+          <!-- esqueceu senha -->
+          <a href="../esqueceu-senha/index.html" class="esqueceu-senha"
+            >Esqueceu sua senha?</a
+          >
+          <!-- tipo de perfil: quem é aluno e monitor escolhe com qual entrar -->
+          <fieldset class="perfil-grupo">
+            <legend>Entrar como:</legend>
+            <div class="perfil-opcoes">
+              <label class="perfil-opcao">
+                <input type="radio" name="perfil" value="aluno" checked />
+                <span>Aluno</span>
+              </label>
+              <label class="perfil-opcao">
+                <input type="radio" name="perfil" value="monitor" />
+                <span>Monitor</span>
+              </label>
+              <label class="perfil-opcao">
+                <input type="radio" name="perfil" value="professor" />
+                <span>Professor</span>
+              </label>
+            </div>
+          </fieldset>
+          <!-- mensagem de erro do login (aparece logo acima do botão) -->
+          <p class="erro-login" id="erro-login" role="alert"></p>
+          <!-- botão login -->
+          <button class="btn-login" type="button" onclick="fazerLogin()">
+            Login
+          </button>
+          <!-- cadastro -->
+          <p class="signup-line">
+            Ainda não possui uma conta?
+            <a href="../cadastro/index.html">Cadastre-se aqui!</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- painel splash -->
+    <div id="splash-panel">
+      <div class="splash-content">
+        <img src="image/logo-pam.png" alt="PAM logo" />
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#687447" />
+    <title>PAM – Perfil do Professor</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- ── NAVBAR ─────────────────────────────────────────────── -->
+    <nav class="navbar" aria-label="Navegação principal">
+      <a href="../home-professor/index.html" class="navbar__brand">
+        <img src="images/logo-pam1.png" alt="PAM" class="navbar__logo" />
+      </a>
+
+      <ul class="navbar__links" id="navLinks">
+        <li>
+          <a href="../home-professor/index.html" class="navbar__link">
+            <img src="images/home-icon.png" alt="" class="navbar__icon" />
+            Início
+          </a>
+        </li>
+        <li>
+          <a href="../validacao-professor/index.html" class="navbar__link">
+            <img src="images/book-icon.png" alt="" class="navbar__icon" />
+            Validação
+          </a>
+        </li>
+        <li>
+          <a href="../perfil-professor/index.html" class="navbar__link active">
+            <img src="images/user-icon.png" alt="" class="navbar__icon" />
+            Perfil
+          </a>
+        </li>
+        <li>
+          <a href="../ajuda/index.html" class="navbar__link">
+            <img src="images/support-icon.png" alt="" class="navbar__icon" />
+            Central de ajuda
+          </a>
+        </li>
+      </ul>
+
+      <!-- botão do menu (aparece só em telas pequenas) -->
+      <button
+        class="navbar__toggle"
+        id="btnMenuMobile"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <span class="navbar__toggle-barra"></span>
+        <span class="navbar__toggle-barra"></span>
+        <span class="navbar__toggle-barra"></span>
+      </button>
+
+      <button
+        class="navbar__avatar"
+        id="btnAvatar"
+        aria-label="Perfil"
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-controls="menuAvatar"
+      >
+        <img src="images/perfil-icon.png" alt="Professora" id="navAvatarImg" />
+      </button>
+    </nav>
+
+    <!-- fundo escurecido atrás do menu mobile -->
+    <div class="navbar__overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <!-- Menu dropdown do avatar -->
+    <!-- Menu dropdown do avatar -->
+    <!-- Menu dropdown do avatar -->
+    <div class="avatar-menu" id="menuAvatar">
+      <a
+        href="../../inicio/login/index.html"
+        class="avatar-menu__item avatar-menu__item--sair"
+        >Sair</a
+      >
+    </div>
+
+    <!-- ── CONTEÚDO PRINCIPAL ─────────────────────────────────── -->
+    <main class="main">
+      <!-- ══ COLUNA ESQUERDA: PERFIL ════════════════════════════ -->
+      <section class="painel painel--perfil">
+        <h2 class="painel__titulo">
+          <img src="images/user-icon.png" alt="" class="painel__titulo-icon" />
+          Perfil
+        </h2>
+
+        <div class="perfil-conteudo">
+          <!-- Card: Dados pessoais -->
+          <article class="perfil-card">
+            <p class="perfil-card__secao-titulo">Dados pessoais</p>
+
+            <!-- Foto de perfil -->
+            <div class="perfil-campo perfil-campo--foto">
+              <span class="perfil-campo__label">Foto de perfil</span>
+              <div class="perfil-foto-wrap">
+                <div class="perfil-foto-circulo">
+                  <img
+                    src="images/perfil-icon.png"
+                    alt="Foto de perfil"
+                    id="fotoPreview"
+                    class="perfil-foto-img"
+                  />
+                </div>
+                <span class="perfil-foto-nome" id="fotoNome"
+                  >fotoperfil.jpg</span
+                >
+                <button
+                  class="perfil-btn-editar"
+                  id="btnEditarFoto"
+                  aria-label="Editar foto de perfil"
+                >
+                  <img
+                    src="images/pen-icon.png"
+                    alt=""
+                    class="perfil-btn-editar__icone"
+                  />
+                </button>
+                <input
+                  type="file"
+                  id="inputFoto"
+                  accept="image/*"
+                  style="display: none"
+                />
+              </div>
+            </div>
+
+            <div class="perfil-divisor"></div>
+
+            <!-- Matrícula -->
+            <div class="perfil-campo">
+              <span class="perfil-campo__label">Matrícula</span>
+              <span class="perfil-campo__valor">SIAPE 1234567</span>
+            </div>
+
+            <div class="perfil-divisor"></div>
+
+            <!-- Nome -->
+            <div class="perfil-campo">
+              <span class="perfil-campo__label">Nome</span>
+              <span class="perfil-campo__valor">Jonas Cruz Barbosa</span>
+            </div>
+
+            <div class="perfil-divisor"></div>
+
+            <!-- E-mail -->
+            <div class="perfil-campo">
+              <span class="perfil-campo__label">E-mail institucional</span>
+              <span class="perfil-campo__valor">jonas.cruz@ifpe.edu.br</span>
+            </div>
+
+            <div class="perfil-divisor"></div>
+
+            <!-- Disciplinas (diferença em relação ao monitor/aluno) -->
+            <div class="perfil-campo perfil-campo--disciplinas">
+              <span class="perfil-campo__label">Disciplinas</span>
+              <div class="perfil-campo__tags">
+                <span class="disciplina-tag">Algoritmos</span>
+                <span class="disciplina-tag">LPOOED</span>
+                <span class="disciplina-tag">Teste de software</span>
+              </div>
+            </div>
+
+            <button class="btn-salvar" id="btnSalvar">Salvar mudanças</button>
+          </article>
+
+          <!-- Card: Excluir conta -->
+          <article class="perfil-card perfil-card--danger">
+            <p
+              class="perfil-card__secao-titulo perfil-card__secao-titulo--danger"
+            >
+              Você deseja excluir sua conta?
+            </p>
+            <p class="perfil-card__aviso-texto">
+              Isso resultará no desligamento de todas as disciplinas na
+              plataforma, caso deseje acessar novamente após isso, uma nova
+              conta deverá ser criada.
+            </p>
+            <button class="btn-excluir" id="btnExcluir">Excluir conta</button>
+          </article>
+        </div>
+      </section>
+
+      <!-- ══ COLUNA DIREITA: MONITORES APROVADOS ════════════════ -->
+      <section class="painel painel--monitores">
+        <h2 class="painel__titulo">
+          <img src="images/users-icon.png" alt="" class="painel__titulo-icon" />
+          Monitores
+        </h2>
+
+        <div class="monitores-lista" id="monitoresLista">
+          <article class="monitor-card">
+            <div class="monitor-card__avatar">
+              <img src="images/perfil-icon.png" alt="Iris" />
+            </div>
+            <div class="monitor-card__info">
+              <p class="monitor-card__nome">Iris de Souza Kemper</p>
+              <p class="monitor-card__disciplina">Algoritmos</p>
+              <p class="monitor-card__email">isk@discente.ifpe.edu.br</p>
+              <p class="monitor-card__matricula">20231D12GR0000</p>
+            </div>
+          </article>
+
+          <article class="monitor-card">
+            <div class="monitor-card__avatar">
+              <img src="images/perfil-icon.png" alt="Alexandra" />
+            </div>
+            <div class="monitor-card__info">
+              <p class="monitor-card__nome">Alexandra Victoria Azevedo</p>
+              <p class="monitor-card__disciplina">LPOOED</p>
+              <p class="monitor-card__email">ava@discente.ifpe.edu.br</p>
+              <p class="monitor-card__matricula">20231D12GR1111</p>
+            </div>
+          </article>
+
+          <article class="monitor-card">
+            <div class="monitor-card__avatar">
+              <img src="images/perfil-icon.png" alt="Emanuela" />
+            </div>
+            <div class="monitor-card__info">
+              <p class="monitor-card__nome">Emanuela Maria Cavalcanti</p>
+              <p class="monitor-card__disciplina">Teste de software</p>
+              <p class="monitor-card__email">emc@discente.ifpe.edu.br</p>
+              <p class="monitor-card__matricula">20231D12GR2222</p>
+            </div>
+          </article>
+        </div>
+
+        <p class="estado-vazio" id="estadoVazioMonitores" hidden>
+          Nenhum monitor aprovado ainda.
+        </p>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <!-- Modal excluir conta -->
+    <div class="modal-overlay" id="modalExcluir">
+      <div class="modal">
+        <p class="modal__texto">Deseja mesmo excluir sua conta?</p>
+        <p class="modal__sub">Essa ação não poderá ser desfeita.</p>
+        <div class="modal__acoes">
+          <button
+            class="modal__btn modal__btn--cancelar"
+            id="btnCancelarExcluir"
+          >
+            Cancelar
+          </button>
+          <button
+            class="modal__btn modal__btn--perigo"
+            id="btnConfirmarExcluir"
+          >
+            Sim, excluir
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

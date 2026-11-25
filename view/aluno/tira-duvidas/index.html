@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#687447" />
+    <title>PAM – Tira-dúvidas</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar" aria-label="Navegação principal">
+      <a href="../home-aluno/index.html" class="navbar__brand">
+        <img src="images/logo-pam1.png" alt="PAM" class="navbar__logo" />
+      </a>
+      <ul class="navbar__links" id="navLinks">
+        <li>
+          <a href="../home-aluno/index.html" class="navbar__link"
+            ><img
+              src="images/home-icon.png"
+              alt=""
+              class="navbar__icon"
+            />Início</a
+          >
+        </li>
+        <li>
+          <a href="../monitores-aluno/index.html" class="navbar__link"
+            ><img
+              src="images/users-icon.png"
+              alt=""
+              class="navbar__icon"
+            />Monitores</a
+          >
+        </li>
+        <li>
+          <a href="../tira-duvidas/index.html" class="navbar__link active"
+            ><img
+              src="images/duvida-icon.png"
+              alt=""
+              class="navbar__icon"
+            />Tira-dúvidas</a
+          >
+        </li>
+        <li>
+          <a href="../perfil-aluno/index.html" class="navbar__link"
+            ><img
+              src="images/user-icon.png"
+              alt=""
+              class="navbar__icon"
+            />Perfil</a
+          >
+        </li>
+        <li>
+          <a href="../ajuda/index.html" class="navbar__link"
+            ><img
+              src="images/support-icon.png"
+              alt=""
+              class="navbar__icon"
+            />Central de ajuda</a
+          >
+        </li>
+      </ul>
+
+      <!-- botão do menu (aparece só em telas pequenas) -->
+      <button
+        class="navbar__toggle"
+        id="btnMenuMobile"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <span class="navbar__toggle-barra"></span>
+        <span class="navbar__toggle-barra"></span>
+        <span class="navbar__toggle-barra"></span>
+      </button>
+      <button
+        class="navbar__avatar"
+        id="btnAvatar"
+        aria-label="Perfil"
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-controls="menuAvatar"
+      >
+        <img src="images/perfil-icon.png" alt="Aluno" />
+      </button>
+    </nav>
+
+    <!-- fundo escurecido atrás do menu mobile -->
+    <div class="navbar__overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <div class="avatar-menu" id="menuAvatar">
+      <a
+        href="../../inicio/login/index.html"
+        class="avatar-menu__item avatar-menu__item--sair"
+        >Sair</a
+      >
+    </div>
+
+    <main class="main">
+      <!-- ══ COLUNA ESQUERDA: FAQ + STATUS ════════════════════ -->
+      <section class="painel painel--faq">
+        <h2 class="painel__titulo">
+          <img src="images/book-icon.png" alt="" class="painel__titulo-icon" />
+          Espaço Tira-dúvidas
+        </h2>
+
+        <div class="faq-lista">
+          <article class="faq-card">
+            <p class="faq-card__pergunta">Para que serve?</p>
+            <p class="faq-card__resposta">
+              Está estudando em casa e surgiu uma dúvida? Peça ajuda ao monitor
+              da matéria, ele poderá entrar em contato por meio do e-mail
+              institucional ou responderá sua dúvida na próxima monitoria.
+            </p>
+          </article>
+          <article class="faq-card">
+            <p class="faq-card__pergunta">Como posso enviar minha dúvida?</p>
+            <p class="faq-card__resposta">
+              Preencha os campos do formulário ao lado, inserindo seu nome,
+              e-mail, dúvida e selecionando a matéria referente para um melhor
+              auxílio. Para finalizar o processo, não esqueça de enviar.
+            </p>
+          </article>
+          <article class="faq-card">
+            <p class="faq-card__pergunta">
+              Como sei que o monitor visualizou minha dúvida?
+            </p>
+            <p class="faq-card__resposta">
+              O monitor da matéria selecionada deve entrar em contato pelo
+              e-mail inserido no formulário ao lado, informando se irá tirar sua
+              dúvida pelo e-mail ou em uma próxima monitoria, de acordo com a
+              disponibilidade dele.
+            </p>
+          </article>
+        </div>
+
+        <div class="status-section">
+          <p class="status-titulo">Dúvidas enviadas nesta sessão</p>
+          <div class="status-lista" id="statusLista">
+            <p class="status-vazia" id="statusVazia">
+              Nenhuma dúvida enviada ainda.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ COLUNA DIREITA: FORMULÁRIO ════════════════════════ -->
+      <section class="painel painel--form">
+        <h2 class="painel__titulo">
+          <img
+            src="images/duvida-icon.png"
+            alt=""
+            class="painel__titulo-icon"
+          />
+          Envie sua dúvida
+        </h2>
+
+        <div class="td-form-corpo">
+          <!-- Nome -->
+          <div class="td-campo">
+            <div class="td-input-field" id="field-td-nome">
+              <div class="td-input-inner">
+                <label class="td-label" for="td-nome">Nome</label>
+                <input
+                  class="td-input"
+                  type="text"
+                  id="td-nome"
+                  placeholder="Seu nome completo"
+                  autocomplete="name"
+                />
+              </div>
+            </div>
+            <span class="td-erro" id="erro-td-nome"
+              >Informe seu nome completo.</span
+            >
+          </div>
+
+          <!-- E-mail -->
+          <div class="td-campo">
+            <div class="td-input-field" id="field-td-email">
+              <div class="td-input-inner">
+                <label class="td-label" for="td-email"
+                  >E-mail institucional</label
+                >
+                <input
+                  class="td-input"
+                  type="email"
+                  id="td-email"
+                  placeholder="seuemail@instituicao.edu.br"
+                  autocomplete="email"
+                />
+              </div>
+            </div>
+            <span class="td-erro" id="erro-td-email"
+              >Use seu e-mail institucional.</span
+            >
+          </div>
+
+          <!-- Matéria -->
+          <div class="td-campo">
+            <div class="td-select-wrap" id="field-td-materia">
+              <div class="td-select-label-wrap">
+                <label class="td-label" for="td-materia"
+                  >Selecione a matéria</label
+                >
+                <select class="td-select" id="td-materia">
+                  <option value="" disabled selected></option>
+                  <option value="Cálculo II">Cálculo II</option>
+                  <option value="LPOOED">LPOOED</option>
+                  <option value="Algoritmos">Algoritmos</option>
+                  <option value="Arquitetura de Computadores">
+                    Arquitetura de Computadores
+                  </option>
+                  <option value="Geografia">Geografia</option>
+                  <option value="Matemática">Matemática</option>
+                </select>
+              </div>
+              <span class="td-select-arrow">&#8964;</span>
+            </div>
+            <span class="td-erro" id="erro-td-materia"
+              >Selecione a matéria da dúvida.</span
+            >
+          </div>
+
+          <!-- Dúvida -->
+          <div class="td-campo">
+            <div class="td-textarea-wrap" id="field-td-duvida">
+              <label class="td-label" for="td-duvida"
+                >Em que você precisa de ajuda?</label
+              >
+              <textarea
+                class="td-textarea"
+                id="td-duvida"
+                placeholder="Descreva sua dúvida com detalhes…"
+                maxlength="300"
+                oninput="atualizarContador()"
+              ></textarea>
+              <span class="td-contador" id="tdContador">0/300</span>
+            </div>
+            <span class="td-erro" id="erro-td-duvida"
+              >Descreva sua dúvida antes de enviar.</span
+            >
+          </div>
+
+          <button class="td-btn-enviar" id="btnEnviar" onclick="enviarDuvida()">
+            Enviar
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

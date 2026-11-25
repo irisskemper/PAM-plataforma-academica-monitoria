@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#687447" />
+    <title>PAM – Monitores</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ── NAVBAR ─────────────────────────────────────────────── -->
+    <nav class="navbar" aria-label="Navegação principal">
+      <a href="../home-aluno/index.html" class="navbar__brand">
+        <img src="images/logo-pam1.png" alt="PAM" class="navbar__logo" />
+      </a>
+
+      <ul class="navbar__links" id="navLinks">
+        <li>
+          <a href="../home-aluno/index.html" class="navbar__link">
+            <img src="images/home-icon.png" alt="" class="navbar__icon" />
+            <span>Início</span>
+          </a>
+        </li>
+        <li>
+          <a href="../monitores-aluno/index.html" class="navbar__link active">
+            <img src="images/users-icon.png" alt="" class="navbar__icon" />
+            <span>Monitores</span>
+          </a>
+        </li>
+        <li>
+          <a href="../tira-duvidas/index.html" class="navbar__link">
+            <img src="images/duvida-icon.png" alt="" class="navbar__icon" />
+            <span>Tira-dúvidas</span>
+          </a>
+        </li>
+        <li>
+          <a href="../perfil-aluno/index.html" class="navbar__link">
+            <img src="images/user-icon.png" alt="" class="navbar__icon" />
+            <span>Perfil</span>
+          </a>
+        </li>
+        <li>
+          <a href="../ajuda/index.html" class="navbar__link">
+            <img src="images/support-icon.png" alt="" class="navbar__icon" />
+            <span>Central de ajuda</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- botão do menu (aparece só em telas pequenas) -->
+      <button
+        class="navbar__toggle"
+        id="btnMenuMobile"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <span class="navbar__toggle-barra"></span>
+        <span class="navbar__toggle-barra"></span>
+        <span class="navbar__toggle-barra"></span>
+      </button>
+
+      <button
+        class="navbar__avatar"
+        id="btnAvatar"
+        aria-label="Menu do perfil"
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-controls="menuAvatar"
+      >
+        <img src="images/perfil-icon.png" alt="Aluno" />
+      </button>
+    </nav>
+
+    <!-- fundo escurecido atrás do menu mobile -->
+    <div class="navbar__overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <!-- Menu dropdown do avatar -->
+    <div class="avatar-menu" id="menuAvatar">
+      <a
+        href="../../inicio/login/index.html"
+        class="avatar-menu__item avatar-menu__item--sair"
+        >Sair</a
+      >
+    </div>
+
+    <!-- ── CONTEÚDO PRINCIPAL ─────────────────────────────────── -->
+    <main class="main">
+      <!-- ══ COLUNA ESQUERDA: MONITORES ════════════════════════ -->
+      <section class="painel painel--monitores-grid">
+        <h2 class="painel__titulo">
+          <img src="images/book-icon.png" alt="" class="painel__titulo-icon" />
+          Monitores
+        </h2>
+
+        <div class="monitores-grid">
+          <!-- ── Card monitor 1 ── -->
+          <article class="monitor-card">
+            <div class="monitor-card__avatar">
+              <img src="images/perfil-icon.png" alt="Ana Clara" />
+            </div>
+            <div class="monitor-card__info">
+              <p class="monitor-card__nome">Ana Clara Ferreira</p>
+              <p class="monitor-card__disciplina">Cálculo II</p>
+              <p class="monitor-card__email">ana.clara@universidade.edu.br</p>
+            </div>
+          </article>
+
+          <!-- ── Card monitor 2 ── -->
+          <article class="monitor-card">
+            <!-- ✏️ Foto do monitor -->
+            <div class="monitor-card__avatar">
+              <img src="images/perfil-icon.png" alt="Carlos Eduardo" />
+            </div>
+            <div class="monitor-card__info">
+              <p class="monitor-card__nome">Carlos Eduardo Lima</p>
+              <p class="monitor-card__disciplina">LPOOED</p>
+              <p class="monitor-card__email">carlos.lima@universidade.edu.br</p>
+            </div>
+          </article>
+
+          <!-- ── Card monitor 3 ── -->
+          <article class="monitor-card">
+            <!-- ✏️ Foto do monitor -->
+            <div class="monitor-card__avatar">
+              <img src="images/perfil-icon.png" alt="Fernanda Souza" />
+            </div>
+            <div class="monitor-card__info">
+              <p class="monitor-card__nome">Fernanda Souza</p>
+              <p class="monitor-card__disciplina">Algoritmos</p>
+              <p class="monitor-card__email">
+                fernanda.souza@universidade.edu.br
+              </p>
+            </div>
+          </article>
+
+          <!-- ── Card monitor 4 ── -->
+          <article class="monitor-card">
+            <!-- ✏️ Foto do monitor -->
+            <div class="monitor-card__avatar">
+              <img src="images/perfil-icon.png" alt="João Pedro" />
+            </div>
+            <div class="monitor-card__info">
+              <p class="monitor-card__nome">João Pedro Alves</p>
+              <p class="monitor-card__disciplina">
+                Arquitetura de Computadores
+              </p>
+              <p class="monitor-card__email">joao.alves@universidade.edu.br</p>
+            </div>
+          </article>
+
+          <!-- ── Card monitor 5 ── -->
+          <article class="monitor-card">
+            <!-- ✏️ Foto do monitor -->
+            <div class="monitor-card__avatar">
+              <img src="images/perfil-icon.png" alt="Marina Rodrigues" />
+            </div>
+            <div class="monitor-card__info">
+              <p class="monitor-card__nome">Marina Rodrigues</p>
+              <p class="monitor-card__disciplina">Geografia</p>
+              <p class="monitor-card__email">
+                marina.rodrigues@universidade.edu.br
+              </p>
+            </div>
+          </article>
+
+          <!-- ── Card monitor 6 ── -->
+          <article class="monitor-card">
+            <!-- ✏️ Foto do monitor -->
+            <div class="monitor-card__avatar">
+              <img src="images/perfil-icon.png" alt="Rafael Oliveira" />
+            </div>
+            <div class="monitor-card__info">
+              <p class="monitor-card__nome">Rafael Oliveira</p>
+              <p class="monitor-card__disciplina">Cálculo II</p>
+              <p class="monitor-card__email">
+                rafael.oliveira@universidade.edu.br
+              </p>
+            </div>
+          </article>
+
+          <!-- ── Card monitor 7 ── -->
+          <article class="monitor-card">
+            <!-- ✏️ Foto do monitor -->
+            <div class="monitor-card__avatar">
+              <img src="images/perfil-icon.png" alt="Letícia Santos" />
+            </div>
+            <div class="monitor-card__info">
+              <p class="monitor-card__nome">Letícia Santos</p>
+              <p class="monitor-card__disciplina">Matemática</p>
+              <p class="monitor-card__email">
+                leticia.santos@universidade.edu.br
+              </p>
+            </div>
+          </article>
+
+          <!-- ── Card monitor 8 ── -->
+          <article class="monitor-card">
+            <!-- ✏️ Foto do monitor -->
+            <div class="monitor-card__avatar">
+              <img src="images/perfil-icon.png" alt="Bruno Costa" />
+            </div>
+            <div class="monitor-card__info">
+              <p class="monitor-card__nome">Bruno Costa</p>
+              <p class="monitor-card__disciplina">LPOOED</p>
+              <p class="monitor-card__email">bruno.costa@universidade.edu.br</p>
+            </div>
+          </article>
+          <!-- ── Card monitor 9 ── -->
+          <article class="monitor-card">
+            <!-- ✏️ Foto do monitor -->
+            <div class="monitor-card__avatar">
+              <img src="images/perfil-icon.png" alt="Bruno Costa" />
+            </div>
+            <div class="monitor-card__info">
+              <p class="monitor-card__nome">Bruno Costa</p>
+              <p class="monitor-card__disciplina">LPOOED</p>
+              <p class="monitor-card__email">bruno.costa@universidade.edu.br</p>
+            </div>
+          </article>
+          <!-- ── Card monitor 10 ── -->
+          <article class="monitor-card">
+            <!-- ✏️ Foto do monitor -->
+            <div class="monitor-card__avatar">
+              <img src="images/perfil-icon.png" alt="Bruno Costa" />
+            </div>
+            <div class="monitor-card__info">
+              <p class="monitor-card__nome">Bruno Costa</p>
+              <p class="monitor-card__disciplina">LPOOED</p>
+              <p class="monitor-card__email">bruno.costa@universidade.edu.br</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ══ COLUNA DIREITA: AVISOS ════════════════════════════ -->
+      <section class="painel painel--avisos">
+        <h2 class="painel__titulo">
+          <img
+            src="images/notification-icon.png"
+            alt=""
+            class="painel__titulo-icon"
+          />
+          Avisos
+        </h2>
+
+        <div class="avisos-lista">
+          <article class="aviso-card">
+            <p class="aviso-card__texto">
+              Monitoria do dia 14/05 foi cancelada!
+            </p>
+            <div class="aviso-card__rodape">
+              <span class="aviso-card__disciplina">LPOOED</span>
+              <span class="aviso-card__data">Enviado em 10/07/2026</span>
+            </div>
+          </article>
+          <article class="aviso-card">
+            <p class="aviso-card__texto">
+              Lista de matemática disponível na plataforma.
+            </p>
+            <div class="aviso-card__rodape">
+              <span class="aviso-card__disciplina">Matemática</span>
+              <span class="aviso-card__data">Enviado em 10/07/2026</span>
+            </div>
+          </article>
+          <article class="aviso-card">
+            <p class="aviso-card__texto">
+              Exercícios de algoritmo será disponibilizada amanhã.
+            </p>
+            <div class="aviso-card__rodape">
+              <span class="aviso-card__disciplina">Algoritmos</span>
+              <span class="aviso-card__data">Enviado em 10/07/2026</span>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,480 @@
+@import url("https://fonts.cdnfonts.com/css/br-shape");
+@import url("https://fonts.cdnfonts.com/css/premint");
+
+/* redefinição da tela */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "BR Shape", sans-serif;
+  overflow: hidden;
+  background-image: url("image/inicio.png");
+  background-size: cover;
+}
+
+/* div da metade da tela, onde fica o card do login */
+.half-login {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* login */
+#login {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease 0.3s;
+}
+
+/* deixar login visível após animação do painel splash */
+#login.visible {
+  opacity: 1;
+}
+
+/* card do login */
+.login-card {
+  background-color: #fefffc;
+  width: 35vw;
+  border-radius: 60px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 50px;
+  gap: 18px;
+  box-shadow: 0 4px 8px rgb(33 44 19 / 0.5);
+}
+
+.login-title {
+  font-size: 36px;
+  font-weight: 500;
+  color: #6d7752;
+  text-align: center;
+}
+/* preencher dados */
+.input-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/* engloba input e a parte do erro */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* caixinha de input */
+.input-field {
+  display: flex;
+  align-items: center;
+  background-color: #fefffc;
+  box-shadow: 0 4px 8px rgb(109 119 82 / 0.5);
+  border-radius: 26px;
+  padding: 0 16px;
+  gap: 10px;
+  height: 58px;
+}
+/* parte do input, onde tem o label e o input em si */
+.input-inner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.input-inner label {
+  font-size: 12px;
+  color: #93a267;
+}
+
+/* tag do input em si */
+.input-field input {
+  color: #2a3d24;
+  border: none;
+  background: none;
+  outline: none;
+  padding: 4px 0;
+  font-size: 12px;
+  font-family: inherit;
+}
+
+/* caixinha em foco (o input em si não tem contorno) */
+.input-field:focus-within {
+  box-shadow:
+    0 4px 8px rgb(109 119 82 / 0.5),
+    0 0 0 2px #93a267;
+}
+
+/* input quando fica inválido  */
+.input-field.invalido {
+  box-shadow: 0 4px 8px rgb(192 57 43 / 0.3);
+  background-color: #fdf0ef;
+}
+
+/* texto do input inválido */
+.erro {
+  display: none;
+  font-size: 11px;
+  color: #c0392b;
+  padding-left: 16px;
+}
+.erro.visivel {
+  display: block;
+}
+/* ícone do input */
+.field-icon {
+  width: 20px;
+  height: 20px;
+}
+/* botão de mostrar senha  */
+.eye-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.eye-btn img {
+  width: 20px;
+  height: 20px;
+}
+/* foco pelo teclado em links e botões */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #6d7752;
+  outline-offset: 3px;
+}
+
+/* esqueceu senha */
+.esqueceu-senha {
+  text-decoration: none;
+  text-align: right;
+  font-weight: 600;
+  font-size: 14px;
+  color: #93a267;
+}
+.esqueceu-senha:hover {
+  text-decoration: underline;
+  color: #93a267;
+}
+/* tipo de perfil */
+.perfil-grupo {
+  border: none;
+}
+
+.perfil-grupo legend {
+  font-size: 12px;
+  color: #93a267;
+  padding: 0 0 4px 16px;
+}
+
+/* caixinha que agrupa as três opções, no mesmo estilo dos inputs */
+.perfil-opcoes {
+  display: flex;
+  gap: 6px;
+  padding: 8px;
+  background-color: #fefffc;
+  box-shadow: 0 4px 8px rgb(109 119 82 / 0.5);
+  border-radius: 26px;
+}
+
+.perfil-opcao {
+  position: relative;
+  flex: 1;
+  cursor: pointer;
+}
+
+/* o radio fica invisível por cima da opção, mas continua acessível pelo teclado */
+.perfil-opcao input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.perfil-opcao span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  border-radius: 20px;
+  font-size: 13px;
+  color: #93a267;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.perfil-opcao:hover input:not(:checked) + span {
+  background-color: #eef1e6;
+}
+
+.perfil-opcao input:checked + span {
+  background-color: #93a267;
+  color: #fefffc;
+}
+
+.perfil-opcao input:focus-visible + span {
+  outline: 3px solid #6d7752;
+  outline-offset: 2px;
+}
+
+/* mensagem de erro do login (email do perfil errado, senha incorreta...) */
+.erro-login {
+  display: none;
+  font-size: 12px;
+  color: #c0392b;
+  background-color: #fdf0ef;
+  box-shadow: 0 4px 8px rgb(192 57 43 / 0.3);
+  border-radius: 18px;
+  padding: 10px 16px;
+  text-align: center;
+}
+.erro-login.visivel {
+  display: block;
+}
+
+/* botão login */
+.btn-login {
+  padding: 16px;
+  background-color: #93a267;
+  color: #fefffc;
+  border: none;
+  border-radius: 26px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.1s;
+  box-shadow: 0 4px 8px rgb(109 119 82 / 0.5);
+}
+.btn-login:hover {
+  background: #6d7752;
+}
+.btn-login:active {
+  transform: scale(0.96);
+}
+/* link de cadastro */
+.signup-line {
+  text-align: center;
+  font-size: 14px;
+  color: #93a267;
+}
+.signup-line a {
+  color: #93a267;
+  text-decoration: none;
+  font-weight: 600;
+}
+.signup-line a:hover {
+  text-decoration: underline;
+}
+
+/*painel splash */
+#splash-panel {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  border-radius: 0;
+  background-color: rgba(246, 245, 245, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    width 0.85s cubic-bezier(0.77, 0, 0.18, 1),
+    border-radius 0.85s cubic-bezier(0.77, 0, 0.18, 1),
+    box-shadow 0.85s ease;
+}
+
+#splash-panel.slid {
+  width: 50%;
+  border-radius: 0 60px 60px 0;
+}
+
+/*animações do splash-painel*/
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* telas baixas (notebook pequeno): o card pode ficar maior que a tela */
+@media (max-height: 760px) and (min-width: 931px) {
+  body {
+    overflow-y: auto;
+  }
+
+  .half-login {
+    height: auto;
+    min-height: 100vh;
+    padding: 20px 0;
+  }
+
+  .login-card {
+    padding: 22px 30px;
+    gap: 12px;
+  }
+}
+
+/* tablet e celular: painel vira uma faixa no topo e a página rola */
+@media (max-width: 930px) {
+  html,
+  body {
+    height: auto;
+    min-height: 100%;
+    overflow: auto;
+  }
+
+  #login {
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    min-height: 100dvh;
+    padding: calc(10vh + 16px) 0 24px;
+  }
+
+  .half-login {
+    width: 100%;
+    height: auto;
+  }
+
+  .login-card {
+    width: min(90vw, 460px);
+  }
+
+  #splash-panel.slid {
+    width: 100%;
+    height: 10%;
+    border-radius: 0 0 40px 40px;
+  }
+  #splash-panel.slid img {
+    width: 80px;
+  }
+}
+
+@media (max-width: 600px) {
+  .login-card {
+    width: calc(100vw - 32px);
+    padding: 28px 24px;
+    border-radius: 30px;
+  }
+
+  .login-title {
+    font-size: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
+
+/* =============================================
+   RESPONSIVIDADE v2.0
+   ============================================= */
+/* ícones e botão do olho nunca encolhem dentro do campo */
+.field-icon,
+.eye-btn {
+  flex-shrink: 0;
+}
+/* o texto do campo pode encolher em vez de empurrar o olho para fora */
+.input-inner {
+  min-width: 0;
+}
+.input-field input {
+  min-width: 0;
+  width: 100%;
+}
+.eye-btn {
+  min-width: 36px;
+  min-height: 36px;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* notebook pequeno: o cartão não fica apertado perto de 930px */
+@media (min-width: 931px) {
+  .login-card,
+  .cadastro-card,
+  .codigo-card,
+  .recuperar-card,
+  .nova-senha-card {
+    width: max(380px, 35vw);
+  }
+}
+
+/* tablet e celular: respeita a área segura (notch) */
+@media (max-width: 930px) {
+  body {
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .voltar-btn {
+    left: max(24px, calc(env(safe-area-inset-left, 0px) + 16px));
+  }
+}
+
+/* celular: campos com 16px (o iPhone não dá zoom ao tocar) */
+@media (max-width: 600px) {
+  input:not([type="radio"]):not([type="checkbox"]),
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+/* celular pequeno (320 a 380px) */
+@media (max-width: 380px) {
+  .login-card,
+  .cadastro-card,
+  .codigo-card,
+  .recuperar-card,
+  .nova-senha-card {
+    width: calc(100vw - 20px);
+  }
+  .login-card,
+  .codigo-card,
+  .recuperar-card,
+  .nova-senha-card {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .login-title,
+  .cadastro-title {
+    font-size: 26px;
+  }
+  .digitos-wrap {
+    gap: 8px;
+  }
+  .digito {
+    width: 42px;
+    height: 46px;
+  }
+  .perfil-opcao span {
+    font-size: 12px;
+  }
+}

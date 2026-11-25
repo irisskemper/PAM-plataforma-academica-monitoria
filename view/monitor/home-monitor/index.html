@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#687447" />
+    <title>PAM – Home Monitor</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ── NAVBAR ─────────────────────────────────────────────── -->
+    <nav class="navbar" aria-label="Navegação principal">
+      <a href="../home-monitor/index.html" class="navbar__brand">
+        <img src="images/logo-pam1.png" alt="PAM" class="navbar__logo" />
+      </a>
+
+      <ul class="navbar__links" id="navLinks">
+        <li>
+          <a href="../home-monitor/index.html" class="navbar__link active">
+            <img src="images/home-icon.png" alt="" class="navbar__icon" />
+            Início
+          </a>
+        </li>
+        <li>
+          <a href="../alunos-monitor/index.html" class="navbar__link">
+            <img src="images/users-icon.png" alt="" class="navbar__icon" />
+            Alunos
+          </a>
+        </li>
+        <li>
+          <a href="../perfil-monitor/index.html" class="navbar__link">
+            <img src="images/user-icon.png" alt="" class="navbar__icon" />
+            Perfil
+          </a>
+        </li>
+        <li>
+          <a href="../ajuda/index.html" class="navbar__link">
+            <img src="images/support-icon.png" alt="" class="navbar__icon" />
+            Central de ajuda
+          </a>
+        </li>
+      </ul>
+
+      <!-- botão do menu (aparece só em telas pequenas) -->
+      <button
+        class="navbar__toggle"
+        id="btnMenuMobile"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <span class="navbar__toggle-barra"></span>
+        <span class="navbar__toggle-barra"></span>
+        <span class="navbar__toggle-barra"></span>
+      </button>
+
+      <button
+        class="navbar__avatar"
+        id="btnAvatar"
+        aria-label="Perfil"
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-controls="menuAvatar"
+      >
+        <img src="images/perfil-icon.png" alt="Monitor" />
+      </button>
+    </nav>
+
+    <!-- fundo escurecido atrás do menu mobile -->
+    <div class="navbar__overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <!-- Menu dropdown do avatar -->
+    <div class="avatar-menu" id="menuAvatar">
+      <a
+        href="../../inicio/login/index.html"
+        class="avatar-menu__item avatar-menu__item--sair"
+        >Sair</a
+      >
+    </div>
+
+    <!-- ── CONTEÚDO PRINCIPAL ─────────────────────────────────── -->
+    <main class="main">
+      <!-- ══ COLUNA ESQUERDA: MATERIAIS ════════════════════════ -->
+      <section class="painel painel--materiais">
+        <div class="painel__cabecalho">
+          <h2 class="painel__titulo">
+            <img
+              src="images/book-icon.png"
+              alt=""
+              class="painel__titulo-icon"
+            />
+            Materiais
+          </h2>
+        </div>
+
+        <div class="painel__acoes">
+          <button class="btn-adicionar" id="btnAdicionarMaterial">
+            <img
+              src="images/plus-icon.png"
+              alt=""
+              class="btn-adicionar__icone"
+            />
+            Adicionar material
+          </button>
+        </div>
+
+        <!-- input de arquivo escondido, acionado pelo botão acima -->
+        <input
+          type="file"
+          id="inputArquivoMaterial"
+          accept="application/pdf"
+          hidden
+        />
+
+        <div class="materiais-grid" id="materiaisGrid">
+          <!-- Card 1: Recusado -->
+          <article class="material-card" data-status="recusado">
+            <div class="material-card__topo">
+              <div class="material-card__icone-wrap">
+                <img
+                  src="images/code-icon.png"
+                  alt=""
+                  class="material-card__icone"
+                />
+              </div>
+              <div class="material-card__info-topo">
+                <p class="material-card__disciplina">Algoritmos</p>
+                <p class="material-card__monitor">Monitor 1</p>
+              </div>
+              <button
+                class="material-card__lixeira"
+                aria-label="Apagar material"
+                onclick="abrirModalExcluir(this)"
+              >
+                <img
+                  src="images/delete-icon.png"
+                  alt=""
+                  class="material-card__lixeira-icone"
+                />
+              </button>
+            </div>
+
+            <div class="arquivo-item">
+              <img
+                src="images/page-icon.png"
+                alt=""
+                class="arquivo-item__icone"
+              />
+              <div>
+                <p class="arquivo-item__nome">Apostila – Cap. I</p>
+                <p class="arquivo-item__tipo">PDF</p>
+              </div>
+            </div>
+
+            <span class="status-badge status-badge--recusado">Recusado</span>
+
+            <p class="material-card__comentario-label">
+              Comentário do professor:
+            </p>
+            <div class="material-card__comentario">Lorem ipsum</div>
+          </article>
+
+          <!-- Card 2: Pendente -->
+          <article class="material-card" data-status="pendente">
+            <div class="material-card__topo">
+              <div class="material-card__icone-wrap">
+                <img
+                  src="images/code-icon.png"
+                  alt=""
+                  class="material-card__icone"
+                />
+              </div>
+              <div class="material-card__info-topo">
+                <p class="material-card__disciplina">Algoritmos</p>
+                <p class="material-card__monitor">Monitor 1</p>
+              </div>
+              <button
+                class="material-card__lixeira"
+                aria-label="Apagar material"
+                onclick="abrirModalExcluir(this)"
+              >
+                <img
+                  src="images/delete-icon.png"
+                  alt=""
+                  class="material-card__lixeira-icone"
+                />
+              </button>
+            </div>
+
+            <div class="arquivo-item">
+              <img
+                src="images/page-icon.png"
+                alt=""
+                class="arquivo-item__icone"
+              />
+              <div>
+                <p class="arquivo-item__nome">Apostila – Cap. I</p>
+                <p class="arquivo-item__tipo">PDF</p>
+              </div>
+            </div>
+
+            <span class="status-badge status-badge--pendente">Pendente</span>
+
+            <p class="material-card__comentario-label">
+              Comentário do professor:
+            </p>
+            <div
+              class="material-card__comentario material-card__comentario--vazio"
+            >
+              Aguardando aprovação do professor.
+            </div>
+          </article>
+
+          <!-- Card 3: Aceito -->
+          <article class="material-card" data-status="aceito">
+            <div class="material-card__topo">
+              <div class="material-card__icone-wrap">
+                <img
+                  src="images/code-icon.png"
+                  alt=""
+                  class="material-card__icone"
+                />
+              </div>
+              <div class="material-card__info-topo">
+                <p class="material-card__disciplina">Algoritmos</p>
+                <p class="material-card__monitor">Monitor 1</p>
+              </div>
+              <button
+                class="material-card__lixeira"
+                aria-label="Apagar material"
+                onclick="abrirModalExcluir(this)"
+              >
+                <img
+                  src="images/delete-icon.png"
+                  alt=""
+                  class="material-card__lixeira-icone"
+                />
+              </button>
+            </div>
+
+            <div class="arquivo-item">
+              <img
+                src="images/page-icon.png"
+                alt=""
+                class="arquivo-item__icone"
+              />
+              <div>
+                <p class="arquivo-item__nome">Apostila – Cap. I</p>
+                <p class="arquivo-item__tipo">PDF</p>
+              </div>
+            </div>
+
+            <span class="status-badge status-badge--aceito">Aceito</span>
+
+            <p class="material-card__comentario-label">
+              Comentário do professor:
+            </p>
+            <div class="material-card__comentario">Lorem ipsum</div>
+          </article>
+        </div>
+
+        <!-- Estado vazio: aparece via JS quando não há nenhum card -->
+        <p class="estado-vazio" id="estadoVazioMateriais" hidden>
+          Nenhum material enviado.
+        </p>
+      </section>
+
+      <!-- ══ COLUNA DIREITA: AVISOS ════════════════════════════ -->
+      <div class="coluna-direita">
+        <section class="painel painel--avisos">
+          <div class="painel__cabecalho">
+            <h2 class="painel__titulo">
+              <img
+                src="images/notification-icon.png"
+                alt=""
+                class="painel__titulo-icon"
+              />
+              Avisos
+            </h2>
+          </div>
+
+          <div class="painel__acoes">
+            <button class="btn-adicionar" id="btnAdicionarAviso">
+              <img
+                src="images/plus-icon.png"
+                alt=""
+                class="btn-adicionar__icone"
+              />
+              Adicionar aviso
+            </button>
+          </div>
+
+          <div class="avisos-lista" id="avisosLista">
+            <article class="aviso-card">
+              <p class="aviso-card__texto">
+                Não haverá atendimento no dia 14/07 por motivo de força maior.
+              </p>
+              <p class="aviso-card__data">Enviado em 10/07/2026</p>
+            </article>
+            <article class="aviso-card">
+              <p class="aviso-card__texto">
+                Já está disponível a lista de exercícios de revisão da próxima
+                prova.
+              </p>
+              <p class="aviso-card__data">Enviado em 08/07/2026</p>
+            </article>
+          </div>
+
+          <p class="estado-vazio" id="estadoVazioAvisos" hidden>
+            Nenhum aviso enviado.
+          </p>
+        </section>
+      </div>
+      <!-- fim .coluna-direita -->
+    </main>
+
+    <!-- ── MODAL: CONFIRMAR EXCLUSÃO DE MATERIAL ────────────────── -->
+    <div class="modal-overlay" id="modalExcluir">
+      <div class="modal">
+        <p class="modal__texto">Realmente deseja apagar esse material?</p>
+        <div class="modal__acoes">
+          <button
+            class="modal__btn modal__btn--cancelar"
+            onclick="fecharModalExcluir()"
+          >
+            Cancelar
+          </button>
+          <button
+            class="modal__btn modal__btn--perigo"
+            onclick="confirmarExclusao()"
+          >
+            Sim, apagar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── MODAL: CONFIRMAR ADIÇÃO DE MATERIAL ──────────────────── -->
+    <div class="modal-overlay" id="modalAdicionarMaterial">
+      <div class="modal">
+        <p class="modal__texto" id="textoConfirmarMaterial">
+          Deseja adicionar este arquivo?
+        </p>
+        <div class="modal__acoes">
+          <button
+            class="modal__btn modal__btn--cancelar"
+            onclick="fecharModalAdicionarMaterial()"
+          >
+            Cancelar
+          </button>
+          <button
+            class="modal__btn modal__btn--confirmar"
+            onclick="confirmarAdicaoMaterial()"
+          >
+            Sim, adicionar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── MODAL: ADICIONAR AVISO ───────────────────────────────── -->
+    <div class="modal-overlay" id="modalAdicionarAviso">
+      <div class="modal modal--form">
+        <p class="modal__texto">Novo aviso</p>
+        <label class="modal__label" for="campoTextoAviso">Mensagem</label>
+        <textarea
+          id="campoTextoAviso"
+          class="modal__textarea"
+          placeholder="Escreva o aviso para os alunos..."
+          maxlength="160"
+        ></textarea>
+        <div class="modal__acoes">
+          <button
+            class="modal__btn modal__btn--cancelar"
+            onclick="fecharModalAdicionarAviso()"
+          >
+            Cancelar
+          </button>
+          <button
+            class="modal__btn modal__btn--confirmar"
+            onclick="confirmarAdicaoAviso()"
+          >
+            Publicar aviso
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

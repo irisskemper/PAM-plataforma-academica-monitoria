@@ -1,0 +1,562 @@
+@import url("https://fonts.cdnfonts.com/css/br-shape");
+
+/* redefinição da tela  */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "BR Shape", sans-serif;
+  overflow: hidden;
+  background-image: url("image/inicio.png");
+  background-size: cover;
+}
+
+/* metade da tela onde fica o card do cadastro*/
+.half-cadastro {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* cadastro */
+#cadastro {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+/* card cadastro*/
+.cadastro-card {
+  background-color: #fefffc;
+  width: 35vw;
+  border-radius: 60px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 0px;
+  gap: 18px;
+  box-shadow: 0 4px 8px rgb(33 44 19 / 0.5);
+  /* scroll interno  */
+  max-height: 80vh;
+}
+
+.card-scroll-body {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  /* padding-bottom garante que o último item não fique colado na borda */
+  padding: 4px 50px 4px 50px;
+  min-height: 0;
+}
+.cadastro-title {
+  font-size: 36px;
+  font-weight: 500;
+  color: #6d7752;
+  text-align: center;
+  padding: 0 50px;
+}
+
+/* preencher dados */
+.input-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/* engloba input e a parte do erro */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+/* caixinha de input */
+.input-field {
+  display: flex;
+  align-items: center;
+  background-color: #fefffc;
+  box-shadow: 0 4px 8px rgb(109 119 82 / 0.5);
+  border-radius: 26px;
+  padding: 0 16px;
+  gap: 10px;
+  height: 58px;
+}
+/* parte do input, onde tem o label e o input em si */
+.input-inner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.input-inner label {
+  font-size: 12px;
+  color: #93a267;
+}
+/* tag do input em si */
+.input-field input {
+  color: #2a3d24;
+  border: none;
+  background: none;
+  outline: none;
+  padding: 4px 0;
+  font-size: 12px;
+  font-family: inherit;
+}
+/* input quando fica inválido  */
+.input-field.invalido {
+  box-shadow: 0 4px 8px rgb(192 57 43 / 0.3);
+  background-color: #fdf0ef;
+}
+/* texto do input inválido */
+.erro {
+  display: none;
+  font-size: 11px;
+  color: #c0392b;
+  padding-left: 16px;
+}
+
+.erro.visivel {
+  display: block;
+}
+/* ícone do input */
+.field-icon {
+  width: 20px;
+  height: 20px;
+}
+/* botão de mostrar senha  */
+
+.eye-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.eye-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+/* perfil */
+.perfil-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.perfil-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #6d7752;
+  text-align: center;
+}
+
+.perfil-btns {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn-perfil {
+  flex: 1;
+  padding: 10px 0;
+  background-color: #fefffc;
+  color: #93a267;
+  border: none;
+  border-radius: 26px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgb(109 119 82 / 0.4);
+  transition:
+    background 0.2s,
+    color 0.2s,
+    transform 0.1s;
+}
+
+.btn-perfil:hover {
+  background-color: #e8eddf;
+}
+
+.btn-perfil.ativo {
+  background-color: #6d7752;
+  color: #fefffc;
+}
+
+.btn-perfil:active {
+  transform: scale(0.96);
+}
+
+/* botão avançar */
+.btn-cadastro {
+  padding: 14px;
+  background-color: #93a267;
+  color: #fefffc;
+  border: none;
+  border-radius: 26px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.1s;
+  box-shadow: 0 4px 8px rgb(109 119 82 / 0.5);
+}
+
+.btn-cadastro:hover {
+  background: #6d7752;
+}
+
+.btn-cadastro:active {
+  transform: scale(0.98);
+}
+
+/* link de login */
+.login-line {
+  text-align: center;
+  font-size: 14px;
+  color: #93a267;
+}
+
+.login-line a {
+  color: #93a267;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.login-line a:hover {
+  color: #6d7752;
+}
+.select-perfil {
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 26px;
+  background-color: #fefffc;
+  box-shadow: 0 4px 8px rgb(109 119 82 / 0.5);
+  font-family: inherit;
+  font-size: 13px;
+  color: #6d7752;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+}
+.opcoes-check {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 4px 0;
+}
+
+.opcoes-check label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #2a3d24;
+  cursor: pointer;
+}
+
+.opcoes-check input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #93a267; /* cor do checkbox marcado */
+  cursor: pointer;
+}
+/* notificação de cadastro bem-sucedido  */
+.toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: #5e693f;
+  color: #fefffc;
+  padding: 12px 24px;
+  border-radius: 26px;
+  font-size: 14px;
+  transition: transform 0.3s ease;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* painel splash */
+#splash-panel {
+  position: fixed;
+  inset: 0;
+  width: 50%;
+  background-color: rgba(246, 245, 245, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 60px 60px 0;
+}
+
+.splash-content img {
+  width: 280px;
+}
+
+/* mobile */
+
+/* ajustes gerais */
+:focus-visible {
+  outline: 2px solid #6d7752;
+  outline-offset: 2px;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  min-width: 0;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  touch-action: manipulation;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* telas baixas (notebook pequeno): o card pode ficar maior que a tela */
+@media (max-height: 760px) and (min-width: 601px) {
+  body {
+    overflow-y: auto;
+  }
+}
+
+/* tablet e celular: painel vira uma faixa no topo e a página rola */
+@media (max-width: 930px) {
+  html,
+  body {
+    height: auto;
+    min-height: 100%;
+    overflow: auto;
+  }
+
+  #cadastro {
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .half-cadastro {
+    width: 80%;
+  }
+
+  .cadastro-card {
+    width: 90vw;
+    max-height: 70vh;
+  }
+  .card-scroll-body {
+    padding: 4px 28px;
+  }
+  .cadastro-title {
+    padding: 0 28px;
+  }
+
+  #splash-panel {
+    width: 100%;
+    height: 10%;
+    border-radius: 0 0 40px 40px;
+  }
+  .splash-content img {
+    width: 80px;
+  }
+}
+
+@media (max-width: 600px) {
+  #cadastro {
+    height: auto;
+    min-height: 100dvh;
+    justify-content: center;
+  }
+
+  .half-cadastro {
+    width: 100%;
+    height: auto;
+    min-height: 100dvh;
+    padding: 20px 0;
+  }
+
+  .cadastro-card {
+    width: calc(100vw - 32px);
+    max-width: 460px;
+    padding: 40px 28px;
+    border-radius: 30px;
+  }
+  .card-scroll-body {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .cadastro-title {
+    padding: 0 20px;
+    font-size: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* =============================================
+   RESPONSIVIDADE v2.0
+   ============================================= */
+/* ícones e botão do olho nunca encolhem dentro do campo */
+.field-icon,
+.eye-btn {
+  flex-shrink: 0;
+}
+/* o texto do campo pode encolher em vez de empurrar o olho para fora */
+.input-inner {
+  min-width: 0;
+}
+.input-field input {
+  min-width: 0;
+  width: 100%;
+}
+.eye-btn {
+  min-width: 36px;
+  min-height: 36px;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* notebook pequeno: o cartão não fica apertado perto de 930px */
+@media (min-width: 931px) {
+  .login-card,
+  .cadastro-card,
+  .codigo-card,
+  .recuperar-card,
+  .nova-senha-card {
+    width: max(380px, 35vw);
+  }
+}
+
+/* tablet e celular: respeita a área segura (notch) */
+@media (max-width: 930px) {
+  body {
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .voltar-btn {
+    left: max(24px, calc(env(safe-area-inset-left, 0px) + 16px));
+  }
+}
+
+/* celular: campos com 16px (o iPhone não dá zoom ao tocar) */
+@media (max-width: 600px) {
+  input:not([type="radio"]):not([type="checkbox"]),
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+/* celular pequeno (320 a 380px) */
+@media (max-width: 380px) {
+  .login-card,
+  .cadastro-card,
+  .codigo-card,
+  .recuperar-card,
+  .nova-senha-card {
+    width: calc(100vw - 20px);
+  }
+  .login-card,
+  .codigo-card,
+  .recuperar-card,
+  .nova-senha-card {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .login-title,
+  .cadastro-title {
+    font-size: 26px;
+  }
+  .digitos-wrap {
+    gap: 8px;
+  }
+  .digito {
+    width: 42px;
+    height: 46px;
+  }
+  .perfil-opcao span {
+    font-size: 12px;
+  }
+}
+
+/* ── cadastro: no tablet e no celular a página rola, sem rolagem dentro do cartão ── */
+@media (max-width: 930px) {
+  #cadastro {
+    min-height: 100dvh;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .half-cadastro {
+    width: 100%;
+    height: auto;
+    min-height: 100dvh;
+    padding: calc(10vh + 16px) 0 24px;
+  }
+  .cadastro-card {
+    width: min(90vw, 460px);
+    max-height: none;
+    padding: 32px 0;
+  }
+  .card-scroll-body {
+    overflow: visible;
+    padding: 4px 28px;
+  }
+  .cadastro-title {
+    padding: 0 28px;
+  }
+}
+@media (max-width: 600px) {
+  .cadastro-card {
+    width: calc(100vw - 32px);
+    padding: 28px 0;
+    border-radius: 30px;
+  }
+  .card-scroll-body {
+    padding: 4px 20px;
+  }
+  .cadastro-title {
+    padding: 0 20px;
+    font-size: 28px;
+  }
+}
+@media (max-width: 380px) {
+  .cadastro-card {
+    width: calc(100vw - 20px);
+  }
+  .card-scroll-body {
+    padding: 4px 14px;
+  }
+}

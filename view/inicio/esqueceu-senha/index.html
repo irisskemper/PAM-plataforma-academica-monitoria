@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#687447" />
+    <title>PAM – Esqueceu sua senha</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- painel esquerdo (o mesmo splash do login, já deslizado) -->
+    <div id="splash-panel">
+      <a href="../login/index.html" class="voltar-btn" aria-label="Voltar">
+        <img src="image/voltar-icon.png" alt="" />
+      </a>
+      <div class="splash-content">
+        <img src="image/logo-pam.png" alt="PAM logo" class="logo-icone" />
+      </div>
+    </div>
+
+    <!-- lado direito, onde fica o card -->
+    <div id="recuperar" class="half-recuperar">
+      <div class="recuperar-card">
+        <p class="recuperar-title">Esqueceu sua senha?</p>
+        <p class="recuperar-desc">
+          Insira seu email no campo abaixo e lhe enviaremos um código de
+          ativação para redefinição da senha.
+        </p>
+
+        <div class="input-group">
+          <div class="input-field" id="field-email">
+            <img src="image/icon-usuario.png" class="field-icon" alt="" />
+            <div class="input-inner">
+              <label for="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="abc@discente.ifpe.edu.br"
+              />
+            </div>
+          </div>
+          <span class="erro" id="erro-email">Use seu email institucional.</span>
+        </div>
+
+        <button class="btn-avancar" type="button" onclick="enviarCodigo()">
+          Avançar
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

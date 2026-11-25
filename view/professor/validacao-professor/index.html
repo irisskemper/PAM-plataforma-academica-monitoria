@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#687447" />
+    <title>PAM – Validação</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- navbar -->
+    <nav class="navbar" aria-label="Navegação principal">
+      <a href="../home-professor/index.html" class="navbar__brand">
+        <img src="images/logo-pam1.png" alt="PAM" class="navbar__logo" />
+      </a>
+      <ul class="navbar__links" id="navLinks">
+        <li>
+          <a href="../home-professor/index.html" class="navbar__link">
+            <img src="images/home-icon.png" alt="" class="navbar__icon" />
+            Início
+          </a>
+        </li>
+        <li>
+          <a href="index.html" class="navbar__link active">
+            <img src="images/book-icon.png" alt="" class="navbar__icon" />
+            Validação
+          </a>
+        </li>
+        <li>
+          <a href="../perfil-professor/index.html" class="navbar__link">
+            <img src="images/user-icon.png" alt="" class="navbar__icon" />
+            Perfil
+          </a>
+        </li>
+        <li>
+          <a href="../ajuda/index.html" class="navbar__link">
+            <img src="images/support-icon.png" alt="" class="navbar__icon" />
+            Central de ajuda
+          </a>
+        </li>
+      </ul>
+
+      <!-- botão do menu (aparece só em telas pequenas) -->
+      <button
+        class="navbar__toggle"
+        id="btnMenuMobile"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <span class="navbar__toggle-barra"></span>
+        <span class="navbar__toggle-barra"></span>
+        <span class="navbar__toggle-barra"></span>
+      </button>
+      <button
+        class="navbar__avatar"
+        id="btnAvatar"
+        aria-label="Perfil"
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-controls="menuAvatar"
+      >
+        <img src="images/perfil-icon.png" alt="Professora" />
+      </button>
+    </nav>
+
+    <!-- fundo escurecido atrás do menu mobile -->
+    <div class="navbar__overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <main class="main">
+      <!-- ==================== COLUNA: MATERIAIS ==================== -->
+      <section class="painel painel--materiais">
+        <h2 class="painel__titulo">
+          <img src="images/book-icon.png" alt="" class="painel__titulo-icon" />
+          Materiais a aprovar
+        </h2>
+
+        <div class="materiais-grid" id="gridMateriais">
+          <article
+            class="material-card aprov-card"
+            data-id="mat-1"
+            tabindex="0"
+          >
+            <div class="aprov-status-bar"></div>
+            <div class="material-card__topo">
+              <div class="material-card__icone-wrap">
+                <img
+                  src="images/code-icon.png"
+                  alt=""
+                  class="material-card__icone"
+                />
+              </div>
+              <div>
+                <p class="material-card__disciplina">Algoritmos</p>
+                <p class="material-card__monitor">Monitor 1</p>
+              </div>
+            </div>
+            <div
+              class="material-card__arquivo"
+              onclick="abrirMaterial('algoritmos-apostila1.pdf')"
+            >
+              <img
+                src="images/page-icon.png"
+                alt=""
+                class="material-card__pdf-icon"
+              />
+              <div>
+                <p class="material-card__arquivo-nome">Apostila – Cap. I</p>
+                <p class="material-card__arquivo-tipo">PDF</p>
+              </div>
+            </div>
+            <!-- comentário que o monitor vai ver no material dele -->
+            <label
+              class="material-card__comentario-label"
+              for="comentario-mat-1"
+              >Comentário para o monitor:</label
+            >
+            <textarea
+              class="material-card__comentario"
+              id="comentario-mat-1"
+              maxlength="200"
+              placeholder="Escreva um comentário (opcional)"
+            ></textarea>
+            <div class="aprov-acoes">
+              <button
+                class="btn-aceitar"
+                onclick="avaliarItem('mat-1', 'aprovado')"
+              >
+                Aceitar
+              </button>
+              <button
+                class="btn-recusar"
+                onclick="avaliarItem('mat-1', 'recusado')"
+              >
+                Recusar
+              </button>
+            </div>
+          </article>
+
+          <article
+            class="material-card aprov-card"
+            data-id="mat-2"
+            tabindex="0"
+          >
+            <div class="aprov-status-bar"></div>
+            <div class="material-card__topo">
+              <div class="material-card__icone-wrap">
+                <img
+                  src="images/code-icon.png"
+                  alt=""
+                  class="material-card__icone"
+                />
+              </div>
+              <div>
+                <p class="material-card__disciplina">Algoritmos</p>
+                <p class="material-card__monitor">Monitor 2</p>
+              </div>
+            </div>
+            <div
+              class="material-card__arquivo"
+              onclick="abrirMaterial('algoritmos-apostila2.pdf')"
+            >
+              <img
+                src="images/page-icon.png"
+                alt=""
+                class="material-card__pdf-icon"
+              />
+              <div>
+                <p class="material-card__arquivo-nome">Apostila – Cap. II</p>
+                <p class="material-card__arquivo-tipo">PDF</p>
+              </div>
+            </div>
+            <!-- comentário que o monitor vai ver no material dele -->
+            <label
+              class="material-card__comentario-label"
+              for="comentario-mat-2"
+              >Comentário para o monitor:</label
+            >
+            <textarea
+              class="material-card__comentario"
+              id="comentario-mat-2"
+              maxlength="200"
+              placeholder="Escreva um comentário (opcional)"
+            ></textarea>
+            <div class="aprov-acoes">
+              <button
+                class="btn-aceitar"
+                onclick="avaliarItem('mat-2', 'aprovado')"
+              >
+                Aceitar
+              </button>
+              <button
+                class="btn-recusar"
+                onclick="avaliarItem('mat-2', 'recusado')"
+              >
+                Recusar
+              </button>
+            </div>
+          </article>
+
+          <article
+            class="material-card aprov-card"
+            data-id="mat-3"
+            tabindex="0"
+          >
+            <div class="aprov-status-bar"></div>
+            <div class="material-card__topo">
+              <div class="material-card__icone-wrap">
+                <img
+                  src="images/code-icon.png"
+                  alt=""
+                  class="material-card__icone"
+                />
+              </div>
+              <div>
+                <p class="material-card__disciplina">Algoritmos</p>
+                <p class="material-card__monitor">Monitor 1</p>
+              </div>
+            </div>
+            <div
+              class="material-card__arquivo"
+              onclick="abrirMaterial('algoritmos-apostila3.pdf')"
+            >
+              <img
+                src="images/page-icon.png"
+                alt=""
+                class="material-card__pdf-icon"
+              />
+              <div>
+                <p class="material-card__arquivo-nome">Apostila – Cap. III</p>
+                <p class="material-card__arquivo-tipo">PDF</p>
+              </div>
+            </div>
+            <!-- comentário que o monitor vai ver no material dele -->
+            <label
+              class="material-card__comentario-label"
+              for="comentario-mat-3"
+              >Comentário para o monitor:</label
+            >
+            <textarea
+              class="material-card__comentario"
+              id="comentario-mat-3"
+              maxlength="200"
+              placeholder="Escreva um comentário (opcional)"
+            ></textarea>
+            <div class="aprov-acoes">
+              <button
+                class="btn-aceitar"
+                onclick="avaliarItem('mat-3', 'aprovado')"
+              >
+                Aceitar
+              </button>
+              <button
+                class="btn-recusar"
+                onclick="avaliarItem('mat-3', 'recusado')"
+              >
+                Recusar
+              </button>
+            </div>
+          </article>
+
+          <article
+            class="material-card aprov-card"
+            data-id="mat-4"
+            tabindex="0"
+          >
+            <div class="aprov-status-bar"></div>
+            <div class="material-card__topo">
+              <div class="material-card__icone-wrap">
+                <img
+                  src="images/code-icon.png"
+                  alt=""
+                  class="material-card__icone"
+                />
+              </div>
+              <div>
+                <p class="material-card__disciplina">Algoritmos</p>
+                <p class="material-card__monitor">Monitor 3</p>
+              </div>
+            </div>
+            <div
+              class="material-card__arquivo"
+              onclick="abrirMaterial('algoritmos-apostila4.pdf')"
+            >
+              <img
+                src="images/page-icon.png"
+                alt=""
+                class="material-card__pdf-icon"
+              />
+              <div>
+                <p class="material-card__arquivo-nome">Apostila – Cap. IV</p>
+                <p class="material-card__arquivo-tipo">PDF</p>
+              </div>
+            </div>
+            <!-- comentário que o monitor vai ver no material dele -->
+            <label
+              class="material-card__comentario-label"
+              for="comentario-mat-4"
+              >Comentário para o monitor:</label
+            >
+            <textarea
+              class="material-card__comentario"
+              id="comentario-mat-4"
+              maxlength="200"
+              placeholder="Escreva um comentário (opcional)"
+            ></textarea>
+            <div class="aprov-acoes">
+              <button
+                class="btn-aceitar"
+                onclick="avaliarItem('mat-4', 'aprovado')"
+              >
+                Aceitar
+              </button>
+              <button
+                class="btn-recusar"
+                onclick="avaliarItem('mat-4', 'recusado')"
+              >
+                Recusar
+              </button>
+            </div>
+          </article>
+
+          <article
+            class="material-card aprov-card"
+            data-id="mat-5"
+            tabindex="0"
+          >
+            <div class="aprov-status-bar"></div>
+            <div class="material-card__topo">
+              <div class="material-card__icone-wrap">
+                <img
+                  src="images/code-icon.png"
+                  alt=""
+                  class="material-card__icone"
+                />
+              </div>
+              <div>
+                <p class="material-card__disciplina">Algoritmos</p>
+                <p class="material-card__monitor">Monitor 2</p>
+              </div>
+            </div>
+            <div
+              class="material-card__arquivo"
+              onclick="abrirMaterial('algoritmos-apostila5.pdf')"
+            >
+              <img
+                src="images/page-icon.png"
+                alt=""
+                class="material-card__pdf-icon"
+              />
+              <div>
+                <p class="material-card__arquivo-nome">Apostila – Cap. V</p>
+                <p class="material-card__arquivo-tipo">PDF</p>
+              </div>
+            </div>
+            <!-- comentário que o monitor vai ver no material dele -->
+            <label
+              class="material-card__comentario-label"
+              for="comentario-mat-5"
+              >Comentário para o monitor:</label
+            >
+            <textarea
+              class="material-card__comentario"
+              id="comentario-mat-5"
+              maxlength="200"
+              placeholder="Escreva um comentário (opcional)"
+            ></textarea>
+            <div class="aprov-acoes">
+              <button
+                class="btn-aceitar"
+                onclick="avaliarItem('mat-5', 'aprovado')"
+              >
+                Aceitar
+              </button>
+              <button
+                class="btn-recusar"
+                onclick="avaliarItem('mat-5', 'recusado')"
+              >
+                Recusar
+              </button>
+            </div>
+          </article>
+
+          <article
+            class="material-card aprov-card"
+            data-id="mat-6"
+            tabindex="0"
+          >
+            <div class="aprov-status-bar"></div>
+            <div class="material-card__topo">
+              <div class="material-card__icone-wrap">
+                <img
+                  src="images/code-icon.png"
+                  alt=""
+                  class="material-card__icone"
+                />
+              </div>
+              <div>
+                <p class="material-card__disciplina">Algoritmos</p>
+                <p class="material-card__monitor">Monitor 4</p>
+              </div>
+            </div>
+            <div
+              class="material-card__arquivo"
+              onclick="abrirMaterial('algoritmos-apostila6.pdf')"
+            >
+              <img
+                src="images/page-icon.png"
+                alt=""
+                class="material-card__pdf-icon"
+              />
+              <div>
+                <p class="material-card__arquivo-nome">Apostila – Cap. VI</p>
+                <p class="material-card__arquivo-tipo">PDF</p>
+              </div>
+            </div>
+            <!-- comentário que o monitor vai ver no material dele -->
+            <label
+              class="material-card__comentario-label"
+              for="comentario-mat-6"
+              >Comentário para o monitor:</label
+            >
+            <textarea
+              class="material-card__comentario"
+              id="comentario-mat-6"
+              maxlength="200"
+              placeholder="Escreva um comentário (opcional)"
+            ></textarea>
+            <div class="aprov-acoes">
+              <button
+                class="btn-aceitar"
+                onclick="avaliarItem('mat-6', 'aprovado')"
+              >
+                Aceitar
+              </button>
+              <button
+                class="btn-recusar"
+                onclick="avaliarItem('mat-6', 'recusado')"
+              >
+                Recusar
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ==================== COLUNA: MONITORES ==================== -->
+      <section class="painel painel--monitores">
+        <h2 class="painel__titulo">
+          <img src="images/users-icon.png" alt="" class="painel__titulo-icon" />
+          Monitores a aprovar
+        </h2>
+
+        <div class="monitores-lista" id="listaMonitores">
+          <article class="monitor-card aprov-card" data-id="mon-1">
+            <div class="aprov-status-bar"></div>
+            <div class="monitor-card__avatar">
+              <img src="images/perfil-icon.png" alt="Iris" />
+            </div>
+            <div class="monitor-card__info">
+              <p class="monitor-card__nome">Iris de Souza Kemper</p>
+              <p class="monitor-card__disciplina">Algoritmos</p>
+              <p class="monitor-card__email">isk@discente.ifpe.edu.br</p>
+              <p class="monitor-card__matricula">20231D12GR0000</p>
+              <div class="aprov-acoes aprov-acoes--monitor">
+                <button
+                  class="btn-aceitar"
+                  onclick="avaliarItem('mon-1', 'aprovado')"
+                >
+                  Aceitar
+                </button>
+                <button
+                  class="btn-recusar"
+                  onclick="avaliarItem('mon-1', 'recusado')"
+                >
+                  Recusar
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="monitor-card aprov-card" data-id="mon-2">
+            <div class="aprov-status-bar"></div>
+            <div class="monitor-card__avatar">
+              <img src="images/perfil-icon.png" alt="Alexandra" />
+            </div>
+            <div class="monitor-card__info">
+              <p class="monitor-card__nome">Alexandra Victoria Azevedo</p>
+              <p class="monitor-card__disciplina">Algoritmos</p>
+              <p class="monitor-card__email">ava@discente.ifpe.edu.br</p>
+              <p class="monitor-card__matricula">20231D12GR1111</p>
+              <div class="aprov-acoes aprov-acoes--monitor">
+                <button
+                  class="btn-aceitar"
+                  onclick="avaliarItem('mon-2', 'aprovado')"
+                >
+                  Aceitar
+                </button>
+                <button
+                  class="btn-recusar"
+                  onclick="avaliarItem('mon-2', 'recusado')"
+                >
+                  Recusar
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="monitor-card aprov-card" data-id="mon-3">
+            <div class="aprov-status-bar"></div>
+            <div class="monitor-card__avatar">
+              <img src="images/perfil-icon.png" alt="Emanuela" />
+            </div>
+            <div class="monitor-card__info">
+              <p class="monitor-card__nome">Emanuela Maria Cavalcanti</p>
+              <p class="monitor-card__disciplina">Algoritmos</p>
+              <p class="monitor-card__email">emc@discente.ifpe.edu.br</p>
+              <p class="monitor-card__matricula">20231D12GR2222</p>
+              <div class="aprov-acoes aprov-acoes--monitor">
+                <button
+                  class="btn-aceitar"
+                  onclick="avaliarItem('mon-3', 'aprovado')"
+                >
+                  Aceitar
+                </button>
+                <button
+                  class="btn-recusar"
+                  onclick="avaliarItem('mon-3', 'recusado')"
+                >
+                  Recusar
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="monitor-card aprov-card" data-id="mon-4">
+            <div class="aprov-status-bar"></div>
+            <div class="monitor-card__avatar">
+              <img src="images/perfil-icon.png" alt="Carlos" />
+            </div>
+            <div class="monitor-card__info">
+              <p class="monitor-card__nome">Carlos Eduardo Lima</p>
+              <p class="monitor-card__disciplina">Algoritmos</p>
+              <p class="monitor-card__email">cel@discente.ifpe.edu.br</p>
+              <p class="monitor-card__matricula">20231D12GR3333</p>
+              <div class="aprov-acoes aprov-acoes--monitor">
+                <button
+                  class="btn-aceitar"
+                  onclick="avaliarItem('mon-4', 'aprovado')"
+                >
+                  Aceitar
+                </button>
+                <button
+                  class="btn-recusar"
+                  onclick="avaliarItem('mon-4', 'recusado')"
+                >
+                  Recusar
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <div class="avatar-menu" id="menuAvatar">
+      <a
+        href="../../inicio/login/index.html"
+        class="avatar-menu__item avatar-menu__item--sair"
+        >Sair</a
+      >
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal" role="dialog" aria-modal="true">
+        <p class="modal__texto" id="modalTexto"></p>
+        <p class="modal__sub" id="modalSub"></p>
+
+
+        <div class="modal__acoes">
+          <button
+            class="modal__btn modal__btn--cancelar"
+            onclick="fecharModal()"
+          >
+            Cancelar
+          </button>
+          <button
+            class="modal__btn"
+            id="modalBtnConfirmar"
+            onclick="confirmarModal()"
+          ></button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

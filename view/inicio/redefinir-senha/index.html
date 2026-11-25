@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#687447" />
+    <title>PAM – Redefinição de senha</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- painel esquerdo -->
+    <div id="splash-panel">
+      <a
+        href="../codigo-senha/index.html"
+        class="voltar-btn"
+        aria-label="Voltar"
+      >
+        <img src="image/voltar-icon.png" alt="" />
+      </a>
+      <div class="splash-content">
+        <img src="image/logo-pam.png" alt="PAM logo" class="logo-icone" />
+      </div>
+    </div>
+
+    <!-- lado direito, onde fica o card -->
+    <div id="nova-senha" class="half-nova-senha">
+      <div class="nova-senha-card">
+        <p class="nova-senha-title">Redefinição de senha</p>
+        <p class="nova-senha-desc">
+          Esta senha substituirá a antiga, todos os seus outros dados
+          permanecerão inalterados.
+        </p>
+
+        <div class="input-wrap">
+          <div class="input-group">
+            <div class="input-field" id="field-senha">
+              <img src="image/icon-lock.png" class="field-icon" />
+              <div class="input-inner">
+                <label for="senha">Nova senha:</label>
+                <input type="password" id="senha" placeholder="00000000" />
+              </div>
+              <button
+                class="eye-btn"
+                type="button"
+                onclick="toggleSenha('senha')"
+                aria-label="Mostrar ou ocultar senha"
+              >
+                <img src="image/icon-eye-open.png" alt="" id="eye-icon-senha" />
+              </button>
+            </div>
+            <span class="erro" id="erro-senha"
+              >A senha precisa ter pelo menos 8 caracteres.</span
+            >
+          </div>
+
+          <div class="input-group">
+            <div class="input-field" id="field-confirma-senha">
+              <img src="image/icon-lock.png" class="field-icon" />
+              <div class="input-inner">
+                <label for="confirma-senha">Confirme a nova senha:</label>
+                <input
+                  type="password"
+                  id="confirma-senha"
+                  placeholder="00000000"
+                />
+              </div>
+              <button
+                class="eye-btn"
+                type="button"
+                onclick="toggleSenha('confirma-senha')"
+                aria-label="Mostrar ou ocultar senha"
+              >
+                <img
+                  src="image/icon-eye-open.png"
+                  alt=""
+                  id="eye-icon-confirma-senha"
+                />
+              </button>
+            </div>
+            <span class="erro" id="erro-confirma-senha"
+              >As senhas não coincidem.</span
+            >
+          </div>
+        </div>
+
+        <button class="btn-voltar-login" onclick="redefinirSenha()">
+          Voltar para tela de login
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,321 @@
+@import url("https://fonts.cdnfonts.com/css/br-shape");
+
+/* redefinição da tela */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "BR Shape", sans-serif;
+  overflow: hidden;
+  background-image: url("image/inicio.png");
+  background-size: cover;
+}
+
+/* painel esquerdo (vidro), na mesma posição que o splash do login depois de deslizar */
+#splash-panel {
+  position: fixed;
+  inset: 0;
+  width: 50%;
+  border-radius: 0 60px 60px 0;
+  background-color: rgba(246, 245, 245, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* botão de voltar */
+.voltar-btn {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.voltar-btn img {
+  width: 22px;
+  height: 22px;
+  filter: brightness(0) invert(1);
+}
+
+/* conteúdo do painel esquerdo */
+.splash-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* foco pelo teclado em links e botões */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #6d7752;
+  outline-offset: 3px;
+}
+
+/* lado direito, onde fica o card */
+.half-codigo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 50%;
+}
+
+/* card do código de segurança */
+.codigo-card {
+  background-color: #fefffc;
+  width: 35vw;
+  border-radius: 60px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 50px;
+  gap: 22px;
+  box-shadow: 0 4px 8px rgb(33 44 19 / 0.5);
+}
+
+.codigo-title {
+  font-size: 30px;
+  font-weight: 500;
+  color: #6d7752;
+  text-align: center;
+}
+
+.codigo-desc {
+  font-size: 13px;
+  color: #93a267;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* email que recebeu o código */
+#email-destino {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+/* engloba os dígitos e a parte do erro */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+}
+
+/* linha com as 4 caixinhas do código */
+.digitos-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.digito {
+  width: 56px;
+  height: 56px;
+  text-align: center;
+  font-size: 20px;
+  font-family: inherit;
+  color: #2a3d24;
+  border: none;
+  outline: none;
+  background-color: #fefffc;
+  border-radius: 18px;
+  box-shadow: 0 4px 8px rgb(109 119 82 / 0.5);
+}
+
+.digito:focus {
+  box-shadow: 0 0 0 2px #93a267;
+}
+
+.digito.invalido {
+  box-shadow: 0 4px 8px rgb(192 57 43 / 0.3);
+  background-color: #fdf0ef;
+}
+
+/* texto de código inválido */
+.erro {
+  display: none;
+  font-size: 11px;
+  color: #c0392b;
+}
+
+.erro.visivel {
+  display: block;
+}
+
+/* botão avançar */
+.btn-avancar {
+  padding: 16px;
+  background-color: #93a267;
+  color: #fefffc;
+  border: none;
+  border-radius: 26px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.1s;
+  box-shadow: 0 4px 8px rgb(109 119 82 / 0.5);
+}
+
+.btn-avancar:hover {
+  background: #6d7752;
+}
+
+.btn-avancar:active {
+  transform: scale(0.96);
+}
+
+/* tablet e celular: painel vira uma faixa no topo e a página rola (igual ao login) */
+@media (max-width: 930px) {
+  html,
+  body {
+    height: auto;
+    min-height: 100%;
+    overflow: auto;
+  }
+
+  #splash-panel {
+    width: 100%;
+    height: 10%;
+    border-radius: 0 0 40px 40px;
+  }
+
+  #splash-panel img.logo-icone {
+    width: 80px;
+  }
+
+  .voltar-btn {
+    top: 5vh;
+    left: 24px;
+    transform: translateY(-50%);
+  }
+
+  .half-codigo {
+    height: auto;
+    min-height: 100dvh;
+    padding: calc(10vh + 16px) 0 24px;
+  }
+
+  .codigo-card {
+    width: min(90vw, 460px);
+  }
+
+  .digitos-wrap {
+    gap: 10px;
+  }
+
+  .digito {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 600px) {
+  .codigo-card {
+    width: calc(100vw - 32px);
+    padding: 28px 24px;
+    border-radius: 30px;
+  }
+
+  .codigo-title {
+    font-size: 26px;
+  }
+}
+
+/* =============================================
+   RESPONSIVIDADE v2.0
+   ============================================= */
+/* ícones e botão do olho nunca encolhem dentro do campo */
+.field-icon,
+.eye-btn {
+  flex-shrink: 0;
+}
+/* o texto do campo pode encolher em vez de empurrar o olho para fora */
+.input-inner {
+  min-width: 0;
+}
+.input-field input {
+  min-width: 0;
+  width: 100%;
+}
+.eye-btn {
+  min-width: 36px;
+  min-height: 36px;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* notebook pequeno: o cartão não fica apertado perto de 930px */
+@media (min-width: 931px) {
+  .login-card,
+  .cadastro-card,
+  .codigo-card,
+  .recuperar-card,
+  .nova-senha-card {
+    width: max(380px, 35vw);
+  }
+}
+
+/* tablet e celular: respeita a área segura (notch) */
+@media (max-width: 930px) {
+  body {
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .voltar-btn {
+    left: max(24px, calc(env(safe-area-inset-left, 0px) + 16px));
+  }
+}
+
+/* celular: campos com 16px (o iPhone não dá zoom ao tocar) */
+@media (max-width: 600px) {
+  input:not([type="radio"]):not([type="checkbox"]),
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+/* celular pequeno (320 a 380px) */
+@media (max-width: 380px) {
+  .login-card,
+  .cadastro-card,
+  .codigo-card,
+  .recuperar-card,
+  .nova-senha-card {
+    width: calc(100vw - 20px);
+  }
+  .login-card,
+  .codigo-card,
+  .recuperar-card,
+  .nova-senha-card {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .login-title,
+  .cadastro-title {
+    font-size: 26px;
+  }
+  .digitos-wrap {
+    gap: 8px;
+  }
+  .digito {
+    width: 42px;
+    height: 46px;
+  }
+  .perfil-opcao span {
+    font-size: 12px;
+  }
+}
