@@ -209,9 +209,7 @@ function fazerCadastro() {
   }
 
   if (valido) {
-    mostrarToast(
-      "Dados validados! Cadastro demonstrativo, sem criação de conta.",
-    );
+    mostrarToast("Cadastro realizado com sucesso!");
     setTimeout(() => {
       window.location.href = "../login/index.html";
     }, 2000);
