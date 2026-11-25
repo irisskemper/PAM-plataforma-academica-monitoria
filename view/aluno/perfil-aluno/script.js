@@ -82,6 +82,12 @@ document.getElementById("btnCancelarExcluir").addEventListener("click", () => {
   document.getElementById("modalExcluir").classList.remove("aberto");
 });
 
+document.getElementById("btnConfirmarExcluir").addEventListener("click", () => {
+  document.getElementById("modalExcluir").classList.remove("aberto");
+  sessionStorage.removeItem("pam_perfil");
+  window.location.href = "../../inicio/login/index.html";
+});
+
 document.getElementById("modalExcluir").addEventListener("click", function (e) {
   if (e.target === this) this.classList.remove("aberto");
 });

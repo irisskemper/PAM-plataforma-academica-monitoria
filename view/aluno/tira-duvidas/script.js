@@ -99,7 +99,7 @@ function enviarDuvida() {
   duvidasEnviadas.push({ materia: materia, resumo: duvida });
   atualizarStatus();
   console.log("Dúvida enviada:", { nome, email, materia, duvida });
-  mostrarToast("Dúvida registrada nesta demonstração. Não há envio ao monitor.");
+  mostrarToast("Dúvida registrada.");
   limparFormulario();
 }
 
@@ -155,7 +155,11 @@ function limparFormulario() {
   atualizarContador();
 }
 
-function escaparTexto(texto) { var el = document.createElement("span"); el.textContent = texto; return el.innerHTML; }
+function escaparTexto(texto) {
+  var el = document.createElement("span");
+  el.textContent = texto;
+  return el.innerHTML;
+}
 
 /* ---------- menu hambúrguer (responsividade v2.0) ---------- */
 (function () {
@@ -194,7 +198,10 @@ function escaparTexto(texto) { var el = document.createElement("span"); el.textC
   });
 
   // clicar no fundo escuro fecha
-  if (fundo) fundo.addEventListener("click", function () { fechar(false); });
+  if (fundo)
+    fundo.addEventListener("click", function () {
+      fechar(false);
+    });
 
   // clicar em qualquer lugar fora da navbar fecha
   document.addEventListener("click", function (e) {
@@ -215,12 +222,16 @@ function escaparTexto(texto) { var el = document.createElement("span"); el.textC
 
   // abrir o menu do avatar fecha o menu hambúrguer
   var avatar = document.getElementById("btnAvatar");
-  if (avatar) avatar.addEventListener("click", function () { fechar(false); });
+  if (avatar)
+    avatar.addEventListener("click", function () {
+      fechar(false);
+    });
 
   // girou o celular ou aumentou a janela: volta ao menu normal
   function aoMudarTamanho(e) {
     if (!e.matches) fechar(false);
   }
-  if (telaPequena.addEventListener) telaPequena.addEventListener("change", aoMudarTamanho);
+  if (telaPequena.addEventListener)
+    telaPequena.addEventListener("change", aoMudarTamanho);
   else telaPequena.addListener(aoMudarTamanho);
 })();
