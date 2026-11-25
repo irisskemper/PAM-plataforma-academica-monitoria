@@ -59,7 +59,7 @@ function avaliarItem(id, acao) {
 
   document.getElementById("modalSub").textContent =
     acao === "aprovado"
-      ? "A aprovação será representada nesta página."
+      ? "O aluno será aprovado e o item será removido da lista."
       : "O item será removido da lista.";
 
   var btnConfirmar = document.getElementById("modalBtnConfirmar");
@@ -92,7 +92,7 @@ function confirmarModal() {
   }
 
   card.remove();
-  mostrarToast(acao === 'aprovado' ? 'Aprovação demonstrada nesta página.' : 'Recusa demonstrada nesta página.');
+  mostrarToast(acao === "aprovado" ? "Aluno aprovado." : "Aluno recusado.");
   _modalId = null;
   _modalAcao = null;
 }
@@ -207,7 +207,10 @@ function mostrarToast(mensagem) {
   });
 
   // clicar no fundo escuro fecha
-  if (fundo) fundo.addEventListener("click", function () { fechar(false); });
+  if (fundo)
+    fundo.addEventListener("click", function () {
+      fechar(false);
+    });
 
   // clicar em qualquer lugar fora da navbar fecha
   document.addEventListener("click", function (e) {
@@ -228,12 +231,16 @@ function mostrarToast(mensagem) {
 
   // abrir o menu do avatar fecha o menu hambúrguer
   var avatar = document.getElementById("btnAvatar");
-  if (avatar) avatar.addEventListener("click", function () { fechar(false); });
+  if (avatar)
+    avatar.addEventListener("click", function () {
+      fechar(false);
+    });
 
   // girou o celular ou aumentou a janela: volta ao menu normal
   function aoMudarTamanho(e) {
     if (!e.matches) fechar(false);
   }
-  if (telaPequena.addEventListener) telaPequena.addEventListener("change", aoMudarTamanho);
+  if (telaPequena.addEventListener)
+    telaPequena.addEventListener("change", aoMudarTamanho);
   else telaPequena.addListener(aoMudarTamanho);
 })();

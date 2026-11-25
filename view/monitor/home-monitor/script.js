@@ -167,7 +167,7 @@ function confirmarAdicaoMaterial() {
 
   grid.prepend(card);
 
-  mostrarToast("Material adicionado à demonstração. Sem envio de arquivo.");
+  mostrarToast("Material enviado.");
   atualizarEstadoVazio("materiaisGrid", "estadoVazioMateriais");
   fecharModalAdicionarMaterial();
 }
@@ -288,7 +288,10 @@ function mostrarToast(mensagem) {
   });
 
   // clicar no fundo escuro fecha
-  if (fundo) fundo.addEventListener("click", function () { fechar(false); });
+  if (fundo)
+    fundo.addEventListener("click", function () {
+      fechar(false);
+    });
 
   // clicar em qualquer lugar fora da navbar fecha
   document.addEventListener("click", function (e) {
@@ -309,12 +312,16 @@ function mostrarToast(mensagem) {
 
   // abrir o menu do avatar fecha o menu hambúrguer
   var avatar = document.getElementById("btnAvatar");
-  if (avatar) avatar.addEventListener("click", function () { fechar(false); });
+  if (avatar)
+    avatar.addEventListener("click", function () {
+      fechar(false);
+    });
 
   // girou o celular ou aumentou a janela: volta ao menu normal
   function aoMudarTamanho(e) {
     if (!e.matches) fechar(false);
   }
-  if (telaPequena.addEventListener) telaPequena.addEventListener("change", aoMudarTamanho);
+  if (telaPequena.addEventListener)
+    telaPequena.addEventListener("change", aoMudarTamanho);
   else telaPequena.addListener(aoMudarTamanho);
 })();
