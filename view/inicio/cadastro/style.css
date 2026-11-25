@@ -385,6 +385,57 @@ img {
     width: 80px;
   }
 }
+.select-perfil {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%2393a267' stroke-width='2' stroke-linecap='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+.btn-adicionar {
+  align-self: flex-start;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 20px;
+  background-color: #93a267;
+  color: #fefffc;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.btn-adicionar:hover {
+  background-color: #6d7752;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px 6px 14px;
+  border-radius: 20px;
+  background-color: #e6ecd5;
+  color: #2a3d24;
+  font-size: 12px;
+}
+.chip button {
+  width: 22px;
+  height: 22px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #687447;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+.chip button:hover {
+  background-color: rgba(104, 116, 71, 0.2);
+}
 
 @media (max-width: 600px) {
   #cadastro {
