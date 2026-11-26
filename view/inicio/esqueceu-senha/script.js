@@ -2,6 +2,7 @@
 const DOMINIOS_INSTITUCIONAIS = [
   "@discente.ifpe.edu.br",
   "@garanhuns.ifpe.edu.br",
+  "@gmail.com",
 ];
 
 // envia o código pro email digitado
