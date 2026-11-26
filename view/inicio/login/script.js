@@ -18,7 +18,10 @@ const DOMINIO_DO_PERFIL = {
   professor: "@docente.ifpe.edu.br",
 };
 
-const DOMINIOS_INSTITUCIONAIS = ["@discente.ifpe.edu.br", "@docente.ifpe.edu.br"];
+const DOMINIOS_INSTITUCIONAIS = [
+  "@discente.ifpe.edu.br",
+  "@garanhuns.ifpe.edu.br",
+];
 
 // Mostrar/esconder senha
 function toggleSenha() {
