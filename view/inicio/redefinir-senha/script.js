@@ -29,7 +29,7 @@ function redefinirSenha() {
   let valido = true;
 
   // valida tamanho mínimo da senha
-  if (senha.length < 8) {
+  if (senha.length < 6) {
     fieldSenha.classList.add("invalido");
     erroSenha.classList.add("visivel");
     valido = false;
