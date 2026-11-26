@@ -2,7 +2,10 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
     <meta name="theme-color" content="#687447" />
     <title>PAM – Home Professor</title>
     <link rel="stylesheet" href="style.css" />
@@ -90,7 +93,7 @@
               </div>
               <div class="material-card__info-topo">
                 <p class="material-card__disciplina">Algoritmos</p>
-                <p class="material-card__monitor">Monitor 1</p>
+                <p class="material-card__monitor">Kailane Eduarda</p>
               </div>
               <button
                 class="material-card__lixeira"
@@ -114,7 +117,91 @@
                 class="material-card__pdf-icon"
               />
               <div>
-                <p class="material-card__arquivo-nome">Apostila – Cap. I</p>
+                <p class="material-card__arquivo-nome">algoritmos-apostila1</p>
+                <p class="material-card__arquivo-tipo">PDF</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="material-card" tabindex="0">
+            <div class="material-card__topo">
+              <div class="material-card__icone-wrap">
+                <img
+                  src="images/code-icon.png"
+                  alt=""
+                  class="material-card__icone"
+                />
+              </div>
+              <div class="material-card__info-topo">
+                <p class="material-card__disciplina">LPOOED</p>
+                <p class="material-card__monitor">Jeovana Bernardino</p>
+              </div>
+              <button
+                class="material-card__lixeira"
+                aria-label="Apagar material"
+                onclick="abrirModalExcluir(this)"
+              >
+                <img
+                  src="images/delete-icon.png"
+                  alt=""
+                  class="material-card__lixeira-icone"
+                />
+              </button>
+            </div>
+            <div
+              class="material-card__arquivo"
+              onclick="abrirMaterial('lpooed-apostila1.pdf')"
+            >
+              <img
+                src="images/page-icon.png"
+                alt=""
+                class="material-card__pdf-icon"
+              />
+              <div>
+                <p class="material-card__arquivo-nome">lpooed-apostila1</p>
+                <p class="material-card__arquivo-tipo">PDF</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="material-card" tabindex="0">
+            <div class="material-card__topo">
+              <div class="material-card__icone-wrap">
+                <img
+                  src="images/code-icon.png"
+                  alt=""
+                  class="material-card__icone"
+                />
+              </div>
+              <div class="material-card__info-topo">
+                <p class="material-card__disciplina">Testes de Software</p>
+                <p class="material-card__monitor">Kelly Juliana</p>
+              </div>
+              <button
+                class="material-card__lixeira"
+                aria-label="Apagar material"
+                onclick="abrirModalExcluir(this)"
+              >
+                <img
+                  src="images/delete-icon.png"
+                  alt=""
+                  class="material-card__lixeira-icone"
+                />
+              </button>
+            </div>
+            <div
+              class="material-card__arquivo"
+              onclick="abrirMaterial('testes-software-apostila1.pdf')"
+            >
+              <img
+                src="images/page-icon.png"
+                alt=""
+                class="material-card__pdf-icon"
+              />
+              <div>
+                <p class="material-card__arquivo-nome">
+                  testes-software-apostila1
+                </p>
                 <p class="material-card__arquivo-tipo">PDF</p>
               </div>
             </div>
@@ -131,7 +218,7 @@
               </div>
               <div class="material-card__info-topo">
                 <p class="material-card__disciplina">Algoritmos</p>
-                <p class="material-card__monitor">Monitor 1</p>
+                <p class="material-card__monitor">Kailane Eduarda</p>
               </div>
               <button
                 class="material-card__lixeira"
@@ -147,7 +234,7 @@
             </div>
             <div
               class="material-card__arquivo"
-              onclick="abrirMaterial('algoritmos-apostila1.pdf')"
+              onclick="abrirMaterial('algoritmos-apostila2.pdf')"
             >
               <img
                 src="images/page-icon.png"
@@ -155,89 +242,9 @@
                 class="material-card__pdf-icon"
               />
               <div>
-                <p class="material-card__arquivo-nome">Apostila – Cap. I</p>
-                <p class="material-card__arquivo-tipo">PDF</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="material-card" tabindex="0">
-            <div class="material-card__topo">
-              <div class="material-card__icone-wrap">
-                <img
-                  src="images/code-icon.png"
-                  alt=""
-                  class="material-card__icone"
-                />
-              </div>
-              <div class="material-card__info-topo">
-                <p class="material-card__disciplina">Algoritmos</p>
-                <p class="material-card__monitor">Monitor 1</p>
-              </div>
-              <button
-                class="material-card__lixeira"
-                aria-label="Apagar material"
-                onclick="abrirModalExcluir(this)"
-              >
-                <img
-                  src="images/delete-icon.png"
-                  alt=""
-                  class="material-card__lixeira-icone"
-                />
-              </button>
-            </div>
-            <div
-              class="material-card__arquivo"
-              onclick="abrirMaterial('algoritmos-apostila1.pdf')"
-            >
-              <img
-                src="images/page-icon.png"
-                alt=""
-                class="material-card__pdf-icon"
-              />
-              <div>
-                <p class="material-card__arquivo-nome">Apostila – Cap. I</p>
-                <p class="material-card__arquivo-tipo">PDF</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="material-card" tabindex="0">
-            <div class="material-card__topo">
-              <div class="material-card__icone-wrap">
-                <img
-                  src="images/code-icon.png"
-                  alt=""
-                  class="material-card__icone"
-                />
-              </div>
-              <div class="material-card__info-topo">
-                <p class="material-card__disciplina">Algoritmos</p>
-                <p class="material-card__monitor">Monitor 1</p>
-              </div>
-              <button
-                class="material-card__lixeira"
-                aria-label="Apagar material"
-                onclick="abrirModalExcluir(this)"
-              >
-                <img
-                  src="images/delete-icon.png"
-                  alt=""
-                  class="material-card__lixeira-icone"
-                />
-              </button>
-            </div>
-            <div
-              class="material-card__arquivo"
-              onclick="abrirMaterial('algoritmos-apostila1.pdf')"
-            >
-              <img
-                src="images/page-icon.png"
-                alt=""
-                class="material-card__pdf-icon"
-              />
-              <div>
-                <p class="material-card__arquivo-nome">Apostila – Cap. I</p>
+                <p class="material-card__arquivo-nome">
+                  algoritmos-apostila2.pdf
+                </p>
                 <p class="material-card__arquivo-tipo">PDF</p>
               </div>
             </div>
@@ -252,8 +259,8 @@
                 />
               </div>
               <div class="material-card__info-topo">
-                <p class="material-card__disciplina">Algoritmos</p>
-                <p class="material-card__monitor">Monitor 1</p>
+                <p class="material-card__disciplina">LPOOED</p>
+                <p class="material-card__monitor">Jeovana Bernardino</p>
               </div>
               <button
                 class="material-card__lixeira"
@@ -269,7 +276,7 @@
             </div>
             <div
               class="material-card__arquivo"
-              onclick="abrirMaterial('algoritmos-apostila1.pdf')"
+              onclick="abrirMaterial('lpooed-apostila2.pdf')"
             >
               <img
                 src="images/page-icon.png"
@@ -277,7 +284,49 @@
                 class="material-card__pdf-icon"
               />
               <div>
-                <p class="material-card__arquivo-nome">Apostila – Cap. I</p>
+                <p class="material-card__arquivo-nome">lpooed-apostila2.pdf</p>
+                <p class="material-card__arquivo-tipo">PDF</p>
+              </div>
+            </div>
+          </article>
+          <article class="material-card" tabindex="0">
+            <div class="material-card__topo">
+              <div class="material-card__icone-wrap">
+                <img
+                  src="images/code-icon.png"
+                  alt=""
+                  class="material-card__icone"
+                />
+              </div>
+              <div class="material-card__info-topo">
+                <p class="material-card__disciplina">Testes de Software</p>
+                <p class="material-card__monitor">Kelly Juliana</p>
+              </div>
+              <button
+                class="material-card__lixeira"
+                aria-label="Apagar material"
+                onclick="abrirModalExcluir(this)"
+              >
+                <img
+                  src="images/delete-icon.png"
+                  alt=""
+                  class="material-card__lixeira-icone"
+                />
+              </button>
+            </div>
+            <div
+              class="material-card__arquivo"
+              onclick="abrirMaterial('testes-software-apostila2.pdf')"
+            >
+              <img
+                src="images/page-icon.png"
+                alt=""
+                class="material-card__pdf-icon"
+              />
+              <div>
+                <p class="material-card__arquivo-nome">
+                  testes-software-apostila2.pdf
+                </p>
                 <p class="material-card__arquivo-tipo">PDF</p>
               </div>
             </div>
@@ -293,7 +342,7 @@
               </div>
               <div class="material-card__info-topo">
                 <p class="material-card__disciplina">Algoritmos</p>
-                <p class="material-card__monitor">Monitor 1</p>
+                <p class="material-card__monitor">Kailane Eduarda</p>
               </div>
               <button
                 class="material-card__lixeira"
@@ -309,7 +358,7 @@
             </div>
             <div
               class="material-card__arquivo"
-              onclick="abrirMaterial('algoritmos-apostila1.pdf')"
+              onclick="abrirMaterial('algoritmos-apostila3.pdf')"
             >
               <img
                 src="images/page-icon.png"
@@ -317,207 +366,9 @@
                 class="material-card__pdf-icon"
               />
               <div>
-                <p class="material-card__arquivo-nome">Apostila – Cap. I</p>
-                <p class="material-card__arquivo-tipo">PDF</p>
-              </div>
-            </div>
-          </article>
-          <article class="material-card" tabindex="0">
-            <div class="material-card__topo">
-              <div class="material-card__icone-wrap">
-                <img
-                  src="images/code-icon.png"
-                  alt=""
-                  class="material-card__icone"
-                />
-              </div>
-              <div class="material-card__info-topo">
-                <p class="material-card__disciplina">Algoritmos</p>
-                <p class="material-card__monitor">Monitor 1</p>
-              </div>
-              <button
-                class="material-card__lixeira"
-                aria-label="Apagar material"
-                onclick="abrirModalExcluir(this)"
-              >
-                <img
-                  src="images/delete-icon.png"
-                  alt=""
-                  class="material-card__lixeira-icone"
-                />
-              </button>
-            </div>
-            <div
-              class="material-card__arquivo"
-              onclick="abrirMaterial('algoritmos-apostila1.pdf')"
-            >
-              <img
-                src="images/page-icon.png"
-                alt=""
-                class="material-card__pdf-icon"
-              />
-              <div>
-                <p class="material-card__arquivo-nome">Apostila – Cap. I</p>
-                <p class="material-card__arquivo-tipo">PDF</p>
-              </div>
-            </div>
-          </article>
-          <article class="material-card" tabindex="0">
-            <div class="material-card__topo">
-              <div class="material-card__icone-wrap">
-                <img
-                  src="images/code-icon.png"
-                  alt=""
-                  class="material-card__icone"
-                />
-              </div>
-              <div class="material-card__info-topo">
-                <p class="material-card__disciplina">Algoritmos</p>
-                <p class="material-card__monitor">Monitor 1</p>
-              </div>
-              <button
-                class="material-card__lixeira"
-                aria-label="Apagar material"
-                onclick="abrirModalExcluir(this)"
-              >
-                <img
-                  src="images/delete-icon.png"
-                  alt=""
-                  class="material-card__lixeira-icone"
-                />
-              </button>
-            </div>
-            <div
-              class="material-card__arquivo"
-              onclick="abrirMaterial('algoritmos-apostila1.pdf')"
-            >
-              <img
-                src="images/page-icon.png"
-                alt=""
-                class="material-card__pdf-icon"
-              />
-              <div>
-                <p class="material-card__arquivo-nome">Apostila – Cap. I</p>
-                <p class="material-card__arquivo-tipo">PDF</p>
-              </div>
-            </div>
-          </article>
-          <article class="material-card" tabindex="0">
-            <div class="material-card__topo">
-              <div class="material-card__icone-wrap">
-                <img
-                  src="images/code-icon.png"
-                  alt=""
-                  class="material-card__icone"
-                />
-              </div>
-              <div class="material-card__info-topo">
-                <p class="material-card__disciplina">Algoritmos</p>
-                <p class="material-card__monitor">Monitor 1</p>
-              </div>
-              <button
-                class="material-card__lixeira"
-                aria-label="Apagar material"
-                onclick="abrirModalExcluir(this)"
-              >
-                <img
-                  src="images/delete-icon.png"
-                  alt=""
-                  class="material-card__lixeira-icone"
-                />
-              </button>
-            </div>
-            <div
-              class="material-card__arquivo"
-              onclick="abrirMaterial('algoritmos-apostila1.pdf')"
-            >
-              <img
-                src="images/page-icon.png"
-                alt=""
-                class="material-card__pdf-icon"
-              />
-              <div>
-                <p class="material-card__arquivo-nome">Apostila – Cap. I</p>
-                <p class="material-card__arquivo-tipo">PDF</p>
-              </div>
-            </div>
-          </article>
-          <article class="material-card" tabindex="0">
-            <div class="material-card__topo">
-              <div class="material-card__icone-wrap">
-                <img
-                  src="images/code-icon.png"
-                  alt=""
-                  class="material-card__icone"
-                />
-              </div>
-              <div class="material-card__info-topo">
-                <p class="material-card__disciplina">Algoritmos</p>
-                <p class="material-card__monitor">Monitor 1</p>
-              </div>
-              <button
-                class="material-card__lixeira"
-                aria-label="Apagar material"
-                onclick="abrirModalExcluir(this)"
-              >
-                <img
-                  src="images/delete-icon.png"
-                  alt=""
-                  class="material-card__lixeira-icone"
-                />
-              </button>
-            </div>
-            <div
-              class="material-card__arquivo"
-              onclick="abrirMaterial('algoritmos-apostila1.pdf')"
-            >
-              <img
-                src="images/page-icon.png"
-                alt=""
-                class="material-card__pdf-icon"
-              />
-              <div>
-                <p class="material-card__arquivo-nome">Apostila – Cap. I</p>
-                <p class="material-card__arquivo-tipo">PDF</p>
-              </div>
-            </div>
-          </article>
-          <article class="material-card" tabindex="0">
-            <div class="material-card__topo">
-              <div class="material-card__icone-wrap">
-                <img
-                  src="images/code-icon.png"
-                  alt=""
-                  class="material-card__icone"
-                />
-              </div>
-              <div class="material-card__info-topo">
-                <p class="material-card__disciplina">Algoritmos</p>
-                <p class="material-card__monitor">Monitor 1</p>
-              </div>
-              <button
-                class="material-card__lixeira"
-                aria-label="Apagar material"
-                onclick="abrirModalExcluir(this)"
-              >
-                <img
-                  src="images/delete-icon.png"
-                  alt=""
-                  class="material-card__lixeira-icone"
-                />
-              </button>
-            </div>
-            <div
-              class="material-card__arquivo"
-              onclick="abrirMaterial('algoritmos-apostila1.pdf')"
-            >
-              <img
-                src="images/page-icon.png"
-                alt=""
-                class="material-card__pdf-icon"
-              />
-              <div>
-                <p class="material-card__arquivo-nome">Apostila – Cap. I</p>
+                <p class="material-card__arquivo-nome">
+                  algoritmos-apostila3.pdf
+                </p>
                 <p class="material-card__arquivo-tipo">PDF</p>
               </div>
             </div>
@@ -543,69 +394,36 @@
         <div class="monitores-lista">
           <article class="monitor-card">
             <div class="monitor-card__avatar">
-              <img src="images/perfil-icon.png" alt="Iris" />
+              <img src="images/perfil-icon.png" alt="Kailane" />
             </div>
             <div class="monitor-card__info">
-              <p class="monitor-card__nome">Iris de Souza Kemper</p>
+              <p class="monitor-card__nome">Kailane Eduarda Oste de Oliveira</p>
               <p class="monitor-card__disciplina">Algoritmo</p>
-              <p class="monitor-card__email">isk@discente.ifpe.edu.br</p>
+              <p class="monitor-card__email">keo@discente.ifpe.edu.br</p>
               <p class="monitor-card__matricula">20231D12GR0000</p>
             </div>
           </article>
 
           <article class="monitor-card">
             <div class="monitor-card__avatar">
-              <img src="images/perfil-icon.png" alt="Alexandra" />
+              <img src="images/perfil-icon.png" alt="Jeovana" />
             </div>
             <div class="monitor-card__info">
-              <p class="monitor-card__nome">Alexandra Victoria Azevedo</p>
+              <p class="monitor-card__nome">Jeovana Bernardino da Silva</p>
               <p class="monitor-card__disciplina">LPOOED</p>
-              <p class="monitor-card__email">ava@discente.ifpe.edu.br</p>
+              <p class="monitor-card__email">jbs@discente.ifpe.edu.br</p>
               <p class="monitor-card__matricula">20231D12GR1111</p>
             </div>
           </article>
 
           <article class="monitor-card">
             <div class="monitor-card__avatar">
-              <img src="images/perfil-icon.png" alt="Emanuela" />
+              <img src="images/perfil-icon.png" alt="Kelly" />
             </div>
             <div class="monitor-card__info">
-              <p class="monitor-card__nome">Emanuela Maria Cavalcanti</p>
+              <p class="monitor-card__nome">Kelly Juliana Simões</p>
               <p class="monitor-card__disciplina">Teste de software</p>
-              <p class="monitor-card__email">emc@discente.ifpe.edu.br</p>
-              <p class="monitor-card__matricula">20231D12GR2222</p>
-            </div>
-          </article>
-          <article class="monitor-card">
-            <div class="monitor-card__avatar">
-              <img src="images/perfil-icon.png" alt="Iris" />
-            </div>
-            <div class="monitor-card__info">
-              <p class="monitor-card__nome">Iris de Souza Kemper</p>
-              <p class="monitor-card__disciplina">Algoritmo</p>
-              <p class="monitor-card__email">isk@discente.ifpe.edu.br</p>
-              <p class="monitor-card__matricula">20231D12GR0000</p>
-            </div>
-          </article>
-          <article class="monitor-card">
-            <div class="monitor-card__avatar">
-              <img src="images/perfil-icon.png" alt="Alexandra" />
-            </div>
-            <div class="monitor-card__info">
-              <p class="monitor-card__nome">Alexandra Victoria Azevedo</p>
-              <p class="monitor-card__disciplina">LPOOED</p>
-              <p class="monitor-card__email">ava@discente.ifpe.edu.br</p>
-              <p class="monitor-card__matricula">20231D12GR1111</p>
-            </div>
-          </article>
-          <article class="monitor-card">
-            <div class="monitor-card__avatar">
-              <img src="images/perfil-icon.png" alt="Emanuela" />
-            </div>
-            <div class="monitor-card__info">
-              <p class="monitor-card__nome">Emanuela Maria Cavalcanti</p>
-              <p class="monitor-card__disciplina">Teste de software</p>
-              <p class="monitor-card__email">emc@discente.ifpe.edu.br</p>
+              <p class="monitor-card__email">kjs@discente.ifpe.edu.br</p>
               <p class="monitor-card__matricula">20231D12GR2222</p>
             </div>
           </article>
