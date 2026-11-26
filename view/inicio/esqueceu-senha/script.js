@@ -1,5 +1,8 @@
 // domínios aceitos (os mesmos da tela de login)
-const DOMINIOS_INSTITUCIONAIS = ["@discente.ifpe.edu.br", "@docente.ifpe.edu.br"];
+const DOMINIOS_INSTITUCIONAIS = [
+  "@discente.ifpe.edu.br",
+  "@garanhuns.ifpe.edu.br",
+];
 
 // envia o código pro email digitado
 function enviarCodigo() {
